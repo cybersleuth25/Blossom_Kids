@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Blossom Kids</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Specific Styles for 404 Page to center everything */
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-code {
+            font-family: var(--font-head);
+            font-size: 8rem;
+            line-height: 1;
+            color: var(--c-pink);
+            text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            animation: bounce 2s infinite;
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            color: var(--c-blue-dark);
+            margin-bottom: 20px;
+        }
+
+        .error-msg {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+        }
+
+        .suggestions {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-soft);
+            text-align: left;
+            max-width: 400px;
+            width: 100%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .suggestions h3 {
+            color: var(--c-purple);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #eee;
+            padding-bottom: 10px;
+        }
+
+        .suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .suggestions li {
+            margin-bottom: 12px;
+        }
+
+        .suggestions a {
+            color: var(--text-main);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .suggestions a:hover {
+            color: var(--c-pink);
+            transform: translateX(5px);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Oops! Wrong Turn? 🎈</h1>
+        
+        <p class="error-msg">
+            Looks like this page floated away with the balloons! 
+            Let's get you back to where the fun is happening.
+        </p>
+        
+        <a href="index.html" class="btn-primary">Go Back Home 🏠</a>
+        
+        <div class="suggestions" style="margin-top: 40px;">
+            <h3>Or hop over to:</h3>
+            <ul>
+                <li>🧸 <a href="index.html#programs">Our Programs</a></li>
+                <li>🎓 <a href="index.html#admissions">Admissions</a></li>
+                <li>📸 <a href="index.html#gallery">Photo Gallery</a></li>
+                <li>📞 <a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
