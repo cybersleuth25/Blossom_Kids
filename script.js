@@ -6,6 +6,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const submitBtn = document.getElementById("submitBtn");
     const statusMessage = document.getElementById("statusMessage");
 
+    /* IMPORTANT: This form requires a backend file named "process.php" on your server.
+    This JavaScript file *sends* the data to "process.php", but "process.php"
+    is responsible for *receiving* it and sending an email.
+    That file is not included here, as it needs to be written in a backend language (like PHP).
+    */
+
+    // Helper function to validate email
+    function isValidEmail(email) {
+        // A simple regex for email validation
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+
     // Add a submit event listener to the form
     if (contactForm) {
         contactForm.addEventListener("submit", function(event) {
@@ -22,13 +35,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 return; // Stop the function
             }
 
+            // UPDATED: Added email format validation
+            if (!isValidEmail(email)) {
+                showMessage("Please enter a valid email address.", "error");
+                return; // Stop the function
+            }
+
+
             // --- 2. PREPARE TO SEND DATA ---
             submitBtn.disabled = true;
             submitBtn.textContent = "Sending...";
             const formData = new FormData(contactForm);
 
             // --- 3. SEND DATA WITH FETCH ---
-            fetch("process.php", {
+            fetch("process.php", { // This 'process.php' file must exist on your server
                 method: "POST",
                 body: formData 
             })
@@ -44,7 +64,8 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .catch(error => {
                 console.error("Error:", error);
-                showMessage("An unexpected error occurred. Please try again.", "error");
+                // This error will happen if "process.php" is missing or has an error
+                showMessage("An error occurred. Please try again later.", "error");
             })
             .finally(() => {
                 submitBtn.disabled = false;

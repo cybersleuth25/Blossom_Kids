@@ -84,7 +84,9 @@ a {
     color: var(--brand-text-dark);
 }
 
-.nav-links a:hover {
+/* UPDATED: Added :focus for accessibility */
+.nav-links a:hover,
+.nav-links a:focus {
     color: var(--brand-pink);
 }
 #Blossom{
@@ -108,7 +110,9 @@ a {
     transition: background-color 0.3s;
 }
 
-.btn-nav:hover {
+/* UPDATED: Added :focus for accessibility */
+.btn-nav:hover,
+.btn-nav:focus {
     background-color: #a8154a;
 }
 
@@ -151,7 +155,9 @@ a {
     transition: background-color 0.3s;
 }
 
-.btn-primary:hover {
+/* UPDATED: Added :focus for accessibility */
+.btn-primary:hover,
+.btn-primary:focus {
     background-color: #a8154a;
 }
 
@@ -272,7 +278,9 @@ button[type="submit"] {
     transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+/* UPDATED: Added :focus for accessibility */
+button[type="submit"]:hover,
+button[type="submit"]:focus {
     background: #a8154a;
 }
 
