@@ -6,10 +6,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const submitBtn = document.getElementById("submitBtn");
     const statusMessage = document.getElementById("statusMessage");
 
+    // Helper function to validate email
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+
     // Add a submit event listener to the form
     if (contactForm) {
         contactForm.addEventListener("submit", function(event) {
-            // Prevent the default form submission (which causes a page reload)
             event.preventDefault();
 
             // --- 1. CLIENT-SIDE VALIDATION ---
@@ -19,7 +24,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (name === "" || email === "" || message === "") {
                 showMessage("Please fill out all fields.", "error");
-                return; // Stop the function
+                return; 
+            }
+
+            if (!isValidEmail(email)) {
+                showMessage("Please enter a valid email address.", "error");
+                return; 
             }
 
             // --- 2. PREPARE TO SEND DATA ---
@@ -27,28 +37,28 @@ document.addEventListener("DOMContentLoaded", function() {
             submitBtn.textContent = "Sending...";
             const formData = new FormData(contactForm);
 
-            // --- 3. SEND DATA WITH FETCH ---
-            fetch("process.php", {
+            // --- 3. SEND DATA TO FREE API ---
+            // MAKE SURE THIS URL IS CORRECT:
+            fetch("https://api.web3forms.com/submit", { 
                 method: "POST",
                 body: formData 
             })
-            .then(response => response.json()) // Expect a JSON response from PHP
+            .then(response => response.json()) 
             .then(data => {
-                // --- 4. HANDLE THE RESPONSE FROM PHP ---
                 if (data.success) {
-                    showMessage(data.message, "success");
-                    contactForm.reset(); // Clear the form
+                    showMessage("Thank you! We have received your message. 🚀", "success");
+                    contactForm.reset(); 
                 } else {
-                    showMessage(data.message, "error");
+                    showMessage("Oops! Something went wrong. Please try again.", "error");
                 }
             })
             .catch(error => {
                 console.error("Error:", error);
-                showMessage("An unexpected error occurred. Please try again.", "error");
+                showMessage("An error occurred. Please try again later.", "error");
             })
             .finally(() => {
                 submitBtn.disabled = false;
-                submitBtn.textContent = "Send Message";
+                submitBtn.textContent = "Send Message 🚀";
             });
         });
     }
@@ -57,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function showMessage(message, type) {
         if (statusMessage) {
             statusMessage.textContent = message;
-            statusMessage.className = type; // This will be 'success' or 'error'
+            statusMessage.className = type; 
         }
     }
 
@@ -68,31 +78,24 @@ document.addEventListener("DOMContentLoaded", function() {
     const totalSlides = slides.length;
 
     function showSlides() {
-        // Hide all slides
         slides.forEach(slide => {
             slide.classList.remove('active');
         });
 
-        // Increment slideIndex and loop back if needed
         slideIndex++;
         if (slideIndex > totalSlides) {
             slideIndex = 1;
         }
 
-        // Show the current slide (index is 0-based)
         if (slides[slideIndex - 1]) {
             slides[slideIndex - 1].classList.add('active');
         }
 
-        // Call showSlides again after 3 seconds (3000 milliseconds)
         setTimeout(showSlides, 3000); 
     }
 
-    // Start the slider if there are slides
     if (totalSlides > 0) {
-        // Ensure the first slide is active when the page loads
         slides[0].classList.add('active');
-        // Start the rotation after an initial delay
         setTimeout(showSlides, 3000); 
     }
 
