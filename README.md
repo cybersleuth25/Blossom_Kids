@@ -3,7 +3,7 @@
 This is a fully responsive, professional website designed for **Blossom Kids**, a preschool in Chikmagalur. It features a playful design, parents' information sections, and a working contact form.
 
 ## 🚀 Live Demo
-*(Once you host it on Netlify, paste your link here, e.g., https://blossom-kids.netlify.app)*
+*(https://blossomkids.netlify.app/)*
 
 ## ✨ Features
 
