@@ -1,44 +1,54 @@
-// Wait for the DOM to be fully loaded before running the script
 document.addEventListener("DOMContentLoaded", function() {
+
+    // --- HAMBURGER MENU SCRIPT (NEW!) ---
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-links");
+
+    if(hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll(".nav-links li a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+    }
 
     // --- CONTACT FORM SCRIPT ---
     const contactForm = document.getElementById("contactForm");
     const submitBtn = document.getElementById("submitBtn");
     const statusMessage = document.getElementById("statusMessage");
 
-    // Helper function to validate email
-    function isValidEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(String(email).toLowerCase());
+    function isValidPhone(phone) {
+        const re = /^[0-9]{10,15}$/;
+        return re.test(String(phone).trim());
     }
 
-    // Add a submit event listener to the form
     if (contactForm) {
         contactForm.addEventListener("submit", function(event) {
             event.preventDefault();
 
-            // --- 1. CLIENT-SIDE VALIDATION ---
             const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
             const message = document.getElementById("message").value.trim();
 
-            if (name === "" || email === "" || message === "") {
+            if (name === "" || phone === "" || message === "") {
                 showMessage("Please fill out all fields.", "error");
                 return; 
             }
 
-            if (!isValidEmail(email)) {
-                showMessage("Please enter a valid email address.", "error");
+            if (!isValidPhone(phone)) {
+                showMessage("Please enter a valid phone number.", "error");
                 return; 
             }
 
-            // --- 2. PREPARE TO SEND DATA ---
             submitBtn.disabled = true;
             submitBtn.textContent = "Sending...";
             const formData = new FormData(contactForm);
 
-            // --- 3. SEND DATA TO FREE API ---
-            // MAKE SURE THIS URL IS CORRECT:
             fetch("https://api.web3forms.com/submit", { 
                 method: "POST",
                 body: formData 
@@ -63,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Helper function to display status messages
     function showMessage(message, type) {
         if (statusMessage) {
             statusMessage.textContent = message;
@@ -71,8 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-
-    // --- HERO SECTION SLIDER SCRIPT ---
+    // --- HERO SLIDER ---
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slider-image');
     const totalSlides = slides.length;
@@ -98,5 +106,4 @@ document.addEventListener("DOMContentLoaded", function() {
         slides[0].classList.add('active');
         setTimeout(showSlides, 3000); 
     }
-
 });

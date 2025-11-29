@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blossom Kids | Where Fun Meets Learning</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -19,10 +23,18 @@
                 <img src="images/logo.png" alt="Blossom Kids Logo">
                 <span id="Blossom">Blossom </span><span id="Kids">Kids</span>
             </a>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#programs">Fun & Learning</a></li>
-                <li><a href="#features">Why Us?</a></li>
+                <li><a href="#daily-routine">Daily Life</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#reviews">Happy Smiles</a></li>
                 <li><a href="#contact" class="btn-nav">Say Hello! 👋</a></li>
             </ul>
@@ -32,11 +44,12 @@
     <header id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Where Little Seeds Grow into Big Dreams! 🌱</h1> 
-                <p>Forget boring classrooms! At Blossom Kids, every day is a magical adventure filled with laughter, learning, and love. <strong>Admissions now open for little explorers.</strong></p>
+                <h1>Where Little Seeds Grow into Big Dreams! 🌱</h1>
+                <p>Forget boring classrooms! At Blossom Kids, every day is a magical adventure filled with laughter,
+                    learning, and love. <strong>Admissions now open for little explorers.</strong></p>
                 <a href="#contact" class="btn-primary">Start the Adventure 🚀</a>
             </div>
-            
+
             <div class="hero-image slider-container">
                 <div class="slider-image fade active">
                     <img src="images/IMG-20250328-WA0008(1).jpg" alt="Children playing with blocks">
@@ -49,7 +62,8 @@
                 </div>
                 <div class="slider-image fade">
                     <img src="images/IMG-20250717-WA0007.jpg" alt="Kids art and craft">
-                </div><div class="slider-image fade">
+                </div>
+                <div class="slider-image fade">
                     <img src="images/IMG-20251101-WA0017.jpg" alt="Kids art and craft">
                 </div>
             </div>
@@ -65,7 +79,8 @@
             <div class="about-grid">
                 <div class="about-text">
                     <h3>Growing Up Great</h3>
-                    <p>We don't just teach ABCs; we spark curiosity! Our joyful curriculum grows with your child, ensuring they are ready for the big world.</p>
+                    <p>We don't just teach ABCs; we spark curiosity! Our joyful curriculum grows with your child,
+                        ensuring they are ready for the big world.</p>
                     <ul class="program-list">
                         <li>🧸 <strong>Pre-Nursery:</strong> Play & Discover</li>
                         <li>🎨 <strong>Nursery:</strong> Create & Imagine</li>
@@ -74,7 +89,7 @@
                     </ul>
                 </div>
                 <div class="about-img">
-                   <img src="images/about-image.jpg" alt="Colorful classroom interior">
+                    <img src="images/about-image.jpg" alt="Colorful classroom interior">
                 </div>
             </div>
         </div>
@@ -103,21 +118,54 @@
         </div>
     </section>
 
-    <section id="reviews" class="section-light">
+    <section id="daily-routine" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>A Day in the Life ☀️</h2>
+                <p>From sunshine to storytime, here is what a typical day looks like.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time">10:00 AM</span>
+                    <h3>Welcome & Prayer 🙏</h3>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">11:00 AM</span>
+                    <h3>Learning & Rhymes 🎶</h3>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">12:00 PM</span>
+                    <h3>Snack Break 🍎</h3>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">12:30 PM</span>
+                    <h3>Creative Play 🎨</h3>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">1:00 PM</span>
+                    <h3>Story Circle 📖</h3>
+                </div>
+                <div class="timeline-item">
+                    <span class="time">1:30 PM - 2:00 PM</span>
+                    <h3>Bye Bye & Home 🏠</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="section-light" style="background: #fdf2f6;">
         <div class="container">
             <div class="section-header">
                 <h2>Happy Smiles & Stories 😊</h2>
                 <p>Don't just take our word for it. Look at these happy faces!</p>
             </div>
-            
+
             <div class="review-grid">
                 <div class="review-card">
                     <div class="video-placeholder">
-                        <iframe 
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
                     </div>
@@ -126,14 +174,12 @@
                         <h4>- Mohammed Insar</h4>
                     </div>
                 </div>
-                
+
                 <div class="review-card">
                     <div class="video-placeholder">
-                        <iframe 
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
                     </div>
@@ -146,23 +192,56 @@
         </div>
     </section>
 
+    <section id="faq" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2>Parents Ask Us 🤔</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>🧒 What is the minimum age?</h3>
+                    <p>We accept children starting from 2 years old for our Pre-Nursery program.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>⏰ What are the timings?</h3>
+                    <p>Our fun-filled day starts at 10:00 AM and wraps up between 1:30 PM - 2:00 PM (Monday to Friday).</p>
+                </div>
+                <div class="faq-item">
+                    <h3>🍎 Is food provided?</h3>
+                    <p>We ask parents to pack healthy snacks, but we provide filtered water and occasional treats!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section-light">
         <div class="container">
             <div class="section-header">
                 <h2>Join the Family! 💌</h2>
                 <p>Spaces fill up fast! Call us or drop a message to schedule a play-date visit.</p>
             </div>
-            
+
             <div class="contact-details">
+                <div class="contact-info">
+                    <h3>Visit Our School (Your child's Second Home):</h3>
+                    <p>Pension Mohalla, 3rd Cross</p>
+                    <p>Chikmagalur 📍</p>
+                    <div class="map-container" style="margin-top: 15px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Blossom+Kids+School,+Pension+Mohalla,+Chikkamagaluru,+Karnataka+577101,+India&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="150px" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                
                 <div class="contact-info">
                     <h3>Call Us (We love to chat):</h3>
                     <p><a href="tel:+918277452777">📞 +91 8277452777</a></p>
                     <p><a href="tel:+918105628885">📞 +91 8105628885</a></p>
-                </div>
-                <div class="contact-info">
-                    <h3>Visit Our Clubhouse:</h3>
-                    <p>Pension Mohalla, 3rd Cross</p>
-                    <p>Chikmagalur 📍</p>
                 </div>
             </div>
 
@@ -172,15 +251,16 @@
 
                     <div class="form-group">
                         <label for="name">Parent's Name</label>
-                        <input type="text" id="name" name="name" placeholder="E.g. John Doe" required>
+                        <input type="text" id="name" name="name" placeholder="E.g. Rajesh & Sneha" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="E.g. 9876543210" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Anything you'd like to ask?</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your little one..." required></textarea>
+                        <label for="message">How can we help?</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Ask a question or tell us about your little one..." required></textarea>
                     </div>
                     <button type="submit" id="submitBtn">Send Message 🚀</button>
                     <div id="statusMessage"></div>
@@ -190,40 +270,52 @@
         </div>
     </section>
 
- <footer class="site-footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h4>Blossom Kids 🌸</h4>
-                <p>Nurturing Young Minds with Joy. The happiest place in Chikmagalur for your little ones to bloom.</p>
-                <p>@_blossom_kids_</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Blossom Kids 🌸</h4>
+                    <p>Nurturing Young Minds with Joy. The happiest place in Chikmagalur for your little ones to bloom.
+                    </p>
+                    <div class="social-links">
+                        <a href="mailto:blossomkids.chikmagalur@gmail.com" class="social-icon" title="Email Us">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/_blossom_kids_" target="_blank" class="social-icon" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Hops</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#programs">Fun & Learning</a></li>
+                        <li><a href="#daily-routine">Daily Life</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#reviews">Happy Smiles</a></li>
+                        <li><a href="#contact">Say Hello</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Come Visit</h4>
+                    <p>Pension Mohalla, 3rd Cross<br>Chikmagalur</p>
+                    <p><a href="tel:+918277452777">+91 8277452777</a></p>
+                    <p><a href="tel:+918105628885">+91 8105628885</a></p>
+                </div>
             </div>
-            
-            <div class="footer-column">
-                <h4>Quick Hops</h4>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#programs">Fun & Learning</a></li>
-                    <li><a href="#features">Why Us?</a></li>
-                    <li><a href="#reviews">Happy Smiles</a></li>
-                    <li><a href="#contact">Say Hello</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Blossom Kids. Made with ❤️ and 🍪.</p>
             </div>
-            
-            <div class="footer-column">
-                <h4>Come Visit</h4>
-                <p>Pension Mohalla, 3rd Cross<br>Chikmagalur</p>
-                <p><a href="tel:+918277452777">+91 8277452777</a></p>
-                <p><a href="tel:+918105628885">+91 8105628885</a></p>
-            </div>
-            
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Blossom Kids. Made with ❤️ and 🍪.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
+
+    <a href="https://wa.me/918277452777" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+    </a>
 
     <script src="script.js"></script>
 </body>
+
 </html>
