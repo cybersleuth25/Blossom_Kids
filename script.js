@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- HAMBURGER MENU SCRIPT (NEW!) ---
+    // --- INITIALIZE ANIMATIONS (NEW!) ---
+    // This makes the elements fade in as you scroll
+    AOS.init({
+        duration: 800, // Animation speed
+        once: true, // Only animate once (don't disappear when scrolling up)
+        offset: 100 // Trigger slightly before element is visible
+    });
+
+    // --- HAMBURGER MENU SCRIPT ---
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-links");
 

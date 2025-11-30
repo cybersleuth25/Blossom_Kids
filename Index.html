@@ -11,8 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,14 +44,14 @@
 
     <header id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
                 <h1>Where Little Seeds Grow into Big Dreams! 🌱</h1>
                 <p>Forget boring classrooms! At Blossom Kids, every day is a magical adventure filled with laughter,
                     learning, and love. <strong>Admissions now open for little explorers.</strong></p>
                 <a href="#contact" class="btn-primary">Start the Adventure 🚀</a>
             </div>
 
-            <div class="hero-image slider-container">
+            <div class="hero-image slider-container" data-aos="fade-left" data-aos-duration="1000">
                 <div class="slider-image fade active">
                     <img src="images/IMG-20250328-WA0008(1).jpg" alt="Children playing with blocks">
                 </div>
@@ -72,12 +73,12 @@
 
     <section id="programs" class="section-light">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Tiny Steps to Big Leaps 🏃‍♂️</h2>
                 <p>From their first wobble to their first word, we are there for every milestone.</p>
             </div>
             <div class="about-grid">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-right">
                     <h3>Growing Up Great</h3>
                     <p>We don't just teach ABCs; we spark curiosity! Our joyful curriculum grows with your child,
                         ensuring they are ready for the big world.</p>
@@ -88,7 +89,7 @@
                         <li>✏️ <strong>UKG:</strong> Ready for School!</li>
                     </ul>
                 </div>
-                <div class="about-img">
+                <div class="about-img" data-aos="fade-left">
                     <img src="images/about-image.jpg" alt="Colorful classroom interior">
                 </div>
             </div>
@@ -97,20 +98,20 @@
 
     <section id="features" class="section-dark">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Why Kids Love Us ❤️</h2>
                 <p>(And why parents trust us!)</p>
             </div>
             <div class="services-grid">
-                <div class="card">
+                <div class="card" data-aos="flip-up" data-aos-delay="100">
                     <h3>🎨 Creative Chaos</h3>
                     <p>We believe in getting messy! Painting, crafting, and building helps little brains grow fast.</p>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="flip-up" data-aos-delay="200">
                     <h3>🏰 Safe Haven</h3>
                     <p>Our rooms are big, bright, and super safe. It’s like a second home, but with more toys!</p>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="flip-up" data-aos-delay="300">
                     <h3>🤝 Best Friends Forever</h3>
                     <p>We teach kindness, sharing, and teamwork so your child makes friends for life.</p>
                 </div>
@@ -120,32 +121,32 @@
 
     <section id="daily-routine" class="section-light">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>A Day in the Life ☀️</h2>
                 <p>From sunshine to storytime, here is what a typical day looks like.</p>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
                     <span class="time">10:00 AM</span>
                     <h3>Welcome & Prayer 🙏</h3>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                     <span class="time">11:00 AM</span>
                     <h3>Learning & Rhymes 🎶</h3>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
                     <span class="time">12:00 PM</span>
                     <h3>Snack Break 🍎</h3>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
                     <span class="time">12:30 PM</span>
                     <h3>Creative Play 🎨</h3>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
                     <span class="time">1:00 PM</span>
                     <h3>Story Circle 📖</h3>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
                     <span class="time">1:30 PM - 2:00 PM</span>
                     <h3>Bye Bye & Home 🏠</h3>
                 </div>
@@ -155,19 +156,18 @@
 
     <section id="reviews" class="section-light" style="background: #fdf2f6;">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Happy Smiles & Stories 😊</h2>
                 <p>Don't just take our word for it. Look at these happy faces!</p>
             </div>
 
             <div class="review-grid">
-                <div class="review-card">
+                <div class="review-card" data-aos="fade-right">
                     <div class="video-placeholder">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <video controls>
+                            <source src="videos/video1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="review-text">
                         <p>"I love my school. My teachers are very kind and caring. Thank you for the opportunity."</p>
@@ -175,13 +175,12 @@
                     </div>
                 </div>
 
-                <div class="review-card">
+                <div class="review-card" data-aos="fade-left">
                     <div class="video-placeholder">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <video controls>
+                            <source src="videos/video2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="review-text">
                         <p>"Enjoy my school with good education and good activities."</p>
@@ -194,19 +193,19 @@
 
     <section id="faq" class="section-dark">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Parents Ask Us 🤔</h2>
             </div>
             <div class="faq-grid">
-                <div class="faq-item">
+                <div class="faq-item" data-aos="flip-up" data-aos-delay="100">
                     <h3>🧒 What is the minimum age?</h3>
                     <p>We accept children starting from 2 years old for our Pre-Nursery program.</p>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item" data-aos="flip-up" data-aos-delay="200">
                     <h3>⏰ What are the timings?</h3>
                     <p>Our fun-filled day starts at 10:00 AM and wraps up between 1:30 PM - 2:00 PM (Monday to Friday).</p>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item" data-aos="flip-up" data-aos-delay="300">
                     <h3>🍎 Is food provided?</h3>
                     <p>We ask parents to pack healthy snacks, but we provide filtered water and occasional treats!</p>
                 </div>
@@ -216,21 +215,21 @@
 
     <section id="contact" class="section-light">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="zoom-in">
                 <h2>Join the Family! 💌</h2>
                 <p>Spaces fill up fast! Call us or drop a message to schedule a play-date visit.</p>
             </div>
 
             <div class="contact-details">
-                <div class="contact-info">
-                    <h3>Visit Our School (Your child's Second Home):</h3>
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Visit Our Clubhouse:</h3>
                     <p>Pension Mohalla, 3rd Cross</p>
                     <p>Chikmagalur 📍</p>
                     <div class="map-container" style="margin-top: 15px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                         <iframe 
                             src="https://maps.google.com/maps?q=Blossom+Kids+School,+Pension+Mohalla,+Chikkamagaluru,+Karnataka+577101,+India&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
-                            height="150px" 
+                            height="250" 
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy">
@@ -238,14 +237,14 @@
                     </div>
                 </div>
                 
-                <div class="contact-info">
+                <div class="contact-info" data-aos="fade-left">
                     <h3>Call Us (We love to chat):</h3>
                     <p><a href="tel:+918277452777">📞 +91 8277452777</a></p>
                     <p><a href="tel:+918105628885">📞 +91 8105628885</a></p>
                 </div>
             </div>
 
-            <div class="form-wrapper">
+            <div class="form-wrapper" data-aos="fade-up">
                 <form id="contactForm">
                     <input type="hidden" name="access_key" value="a4c270a9-62f6-4405-89cf-dc176bf6d3d9">
 
@@ -255,7 +254,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="E.g. 9876543210" required>
+                        <input type="tel" id="phone" name="phone" placeholder="9876543210" required>
                     </div>
                     <div class="form-group">
                         <label for="message">How can we help?</label>
@@ -284,6 +283,9 @@
                         <a href="https://www.instagram.com/_blossom_kids_" target="_blank" class="social-icon" title="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
+                        <a href="https://www.youtube.com/@Blossom_Kids_Chikmangalur" target="_blank" class="social-icon" title="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -306,7 +308,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Blossom Kids. Made with ❤️ and 🍪.</p>
+                <p>© 2024 Blossom Kids. Made with ❤️ and 🍪.</p>
             </div>
         </div>
     </footer>
@@ -315,6 +317,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
     </a>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 

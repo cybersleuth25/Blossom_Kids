@@ -50,7 +50,7 @@ a { text-decoration: none; color: var(--brand-blue); }
 #Blossom { font-weight: bold; color: var(--brand-pink); font-size: 1.5rem; }
 #Kids { font-weight: bold; color: var(--brand-blue); font-size: 1.5rem; }
 
-/* Hamburger Menu (Hidden on Desktop) */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -236,8 +236,22 @@ button[type="submit"]:hover, button[type="submit"]:focus { background: #a8154a; 
 .review-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 .review-card { background: var(--brand-white); border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee; overflow: hidden; transition: transform 0.3s; }
 .review-card:hover { transform: translateY(-5px); }
-.video-placeholder { position: relative; padding-top: 56.25%; height: 0; background: #f0f0f0; }
-.video-placeholder iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+/* --- UPDATED: FIXED HEIGHT VIDEO --- */
+.video-placeholder { 
+    position: relative; 
+    width: 100%;
+    /* FIX: Changed from 177% to fixed pixels so it's not too tall */
+    height: 450px; 
+    background: #000; 
+}
+.video-placeholder video { 
+    width: 100%; 
+    height: 100%; 
+    /* This makes sure the video fills the box without looking weird */
+    object-fit: cover; 
+}
+
 .review-text { padding: 1.5rem; }
 .review-text p { font-style: italic; color: #555; margin-bottom: 1rem; }
 .review-text h4 { font-weight: bold; color: var(--brand-pink); text-align: right; }
@@ -281,7 +295,6 @@ button[type="submit"]:hover, button[type="submit"]:focus { background: #a8154a; 
 
 /* === HAMBURGER MENU RESPONSIVENESS === */
 @media(max-width: 768px) {
-    /* FIX: Force 1 column for grid items on mobile */
     .hero .container, .about-grid, .services-grid, .contact-details { 
         grid-template-columns: 1fr; 
     }
