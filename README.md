@@ -354,4 +354,4 @@ For any issues or questions:
 
 **Made with ❤️ and 🍪 for Blossom Kids**
 
-*Last Updated: December 2024*
+*Last Updated: December 2025*
