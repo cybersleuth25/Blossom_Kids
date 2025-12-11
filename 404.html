@@ -5,18 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found | Blossom Kids</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f7f9f8 0%, #fdf2f6 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .error-animation {
+            font-size: 8rem;
+            animation: float 3s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .error-container h1 {
+            font-size: 4rem;
+            color: #D81B60;
+            margin-bottom: 10px;
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        .error-container h2 {
+            color: #0B572A;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        .error-container p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        
+        .btn-home {
+            display: inline-block;
+            background: #D81B60;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(216, 27, 96, 0.3);
+        }
+        
+        .btn-home:hover {
+            background: #a8154a;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(216, 27, 96, 0.4);
+        }
+        
+        .suggestions {
+            margin-top: 40px;
+            text-align: left;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 500px;
+        }
+        
+        .suggestions h3 {
+            color: #0B572A;
+            margin-bottom: 15px;
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        .suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .suggestions li {
+            margin: 10px 0;
+        }
+        
+        .suggestions a {
+            color: #00AEEF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .suggestions a:hover {
+            color: #D81B60;
+        }
+        
+        @media(max-width: 768px) {
+            .error-animation {
+                font-size: 5rem;
+            }
+            
+            .error-container h1 {
+                font-size: 2.5rem;
+            }
+            
+            .error-container h2 {
+                font-size: 1.5rem;
+            }
+            
+            .error-container p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
-<body style="text-align: center; padding: 100px 20px; background-color: #f7f9f8;">
+<body>
     
-    <h1 style="font-size: 4rem; color: #D81B60; margin-bottom: 10px;">Oops! 🎈</h1>
-    <h2 style="color: #0B572A;">Page Not Found</h2>
-    
-    <p style="font-size: 1.2rem; color: #555; margin-bottom: 30px;">
-        Looks like you floated away! Let's get you back to the fun.
-    </p>
-    
-    <a href="index.html" class="btn-primary" style="text-decoration: none;">Go Back Home 🏠</a>
+    <div class="error-container">
+        <div class="error-animation">🎈</div>
+        <h1>Oops! 404</h1>
+        <h2>Page Not Found</h2>
+        
+        <p>
+            Looks like this page floated away with the balloons! 
+            Let's get you back to where the fun is happening.
+        </p>
+        
+        <a href="index.html" class="btn-home">Go Back Home 🏠</a>
+        
+        <div class="suggestions">
+            <h3>Popular Pages:</h3>
+            <ul>
+                <li>🏠 <a href="index.html#home">Home</a></li>
+                <li>📚 <a href="index.html#programs">Our Programs</a></li>
+                <li>🎓 <a href="index.html#admissions">Admissions</a></li>
+                <li>📸 <a href="index.html#gallery">Photo Gallery</a></li>
+                <li>❓ <a href="index.html#faq">FAQs</a></li>
+                <li>📞 <a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
 
 </body>
 </html>
