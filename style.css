@@ -78,9 +78,13 @@ a {
 
 .navbar .logo { display: flex; align-items: center; transition: transform 0.3s ease; }
 .navbar .logo:hover { transform: scale(1.05) rotate(-2deg); }
+
+/* --- LOGO FIX (Blends white background) --- */
 .navbar .logo img { 
-    height: 65px; width: auto; margin-right: 10px; 
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1)); 
+    height: 60px; /* Slight adjustment */
+    width: auto; 
+    margin-right: 10px; 
+    mix-blend-mode: multiply; /* THIS REMOVES THE WHITE BOX */
 }
 
 .nav-links { list-style: none; display: flex; align-items: center; }
@@ -90,14 +94,17 @@ a {
     color: var(--brand-text-dark); position: relative; padding: 8px 0;
 }
 
+/* --- NAVIGATION LINE FIX --- */
 .nav-links a::after {
     content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
     background: linear-gradient(90deg, var(--brand-pink), var(--brand-blue));
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+/* Only allow line on HOVER, remove persistent active line to fix "staying there" issue */
+.nav-links a:hover::after { width: 100%; }
 .nav-links a:hover { color: var(--brand-pink); }
+.nav-links a.active-link { color: var(--brand-pink); } /* Just color, no line for active */
 
 #Blossom { font-weight: 700; color: var(--brand-pink); font-size: 1.6rem; text-shadow: 2px 2px 4px rgba(216, 27, 96, 0.1); }
 #Kids { font-weight: 700; color: var(--brand-blue); font-size: 1.6rem; text-shadow: 2px 2px 4px rgba(0, 174, 239, 0.1); }
@@ -114,9 +121,12 @@ a {
     border-radius: 3px;
 }
 
+/* --- SAY HELLO BUTTON (Shorter) --- */
 .btn-nav {
     background: var(--gradient-primary);
-    color: var(--brand-white) !important; padding: 10px 24px; border-radius: 50px; 
+    color: var(--brand-white) !important; 
+    padding: 8px 20px; /* Reduced from 10px 24px */
+    border-radius: 50px; 
     box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3); font-weight: 600;
 }
 .btn-nav::after { display: none; }
@@ -367,19 +377,30 @@ button[type="submit"]:disabled { background: #ccc; cursor: not-allowed; transfor
 }
 .slider-image { 
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-    opacity: 0; transition: opacity 0.6s ease-in-out; 
+    opacity: 0; 
+    transition: opacity 0.4s ease-in-out; /* FASTER TRANSITION */
 }
 .slider-image img { width: 100%; height: 100%; object-fit: cover; }
 .slider-image.active { opacity: 1; }
 
+/* --- MINIMAL SLIDER ARROWS --- */
 .slider-btn {
     position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.95); color: var(--brand-pink);
-    border: none; padding: 15px 20px; font-size: 1.5rem; cursor: pointer;
-    border-radius: 12px; z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.8); /* Lighter background */
+    color: var(--brand-pink);
+    border: none; 
+    
+    /* New Minimal Dimensions */
+    width: 40px; height: 40px; 
+    padding: 0;
+    font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; /* Perfect circle */
+    
+    cursor: pointer; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
-.slider-btn:hover { background: white; transform: translateY(-50%) scale(1.1); }
+.slider-btn:hover { background: white; transform: translateY(-50%) scale(1.1); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
 .slider-btn.prev { left: 20px; }
 .slider-btn.next { right: 20px; }
 
@@ -441,6 +462,20 @@ button[type="submit"]:disabled { background: #ccc; cursor: not-allowed; transfor
 .whatsapp-float:hover { transform: scale(1.1); }
 .whatsapp-float img { width: 35px; height: 35px; }
 
+/* --- PRELOADER --- */
+#preloader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #fff; z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+    transition: opacity 0.5s ease;
+}
+.spinner {
+    width: 50px; height: 50px;
+    border: 5px solid #f3f3f3; border-top: 5px solid #D81B60;
+    border-radius: 50%; animation: spin 1s linear infinite;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
 /* ===================================
    RESPONSIVE DESIGN
    =================================== */
@@ -463,6 +498,9 @@ button[type="submit"]:disabled { background: #ccc; cursor: not-allowed; transfor
     .section-header h2 { font-size: 2.2rem; }
     .slider-container { height: 300px; margin-top: 2rem; }
     .footer-grid { grid-template-columns: 1fr; }
+
+    /* Disable heavy background animations on mobile */
+    .hero::before, .hero::after, .section-dark::before { display: none; }
 
     /* Hamburger */
     .hamburger { display: block; }

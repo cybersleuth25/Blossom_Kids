@@ -6,36 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blossom Kids | Where Fun Meets Learning - Best Preschool in Chikmagalur</title>
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Blossom Kids Preschool in Chikmagalur - Where fun meets learning. Programs for Pre-Nursery, Nursery, LKG & UKG. Experienced teachers, safe environment. Admissions open!">
     <meta name="keywords" content="preschool chikmagalur, kindergarten chikmagalur, nursery school, LKG, UKG, best preschool, early childhood education, pension mohalla">
     <meta name="author" content="Blossom Kids">
     
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Blossom Kids | Best Preschool in Chikmagalur">
     <meta property="og:description" content="Nurturing young minds with joy. Quality early childhood education in Chikmagalur.">
     <meta property="og:image" content="images/logo.png">
     <meta property="og:url" content="https://blossomkids.netlify.app/">
     <meta property="og:type" content="website">
     
-    <!-- Favicon -->
     <link rel="icon" href="images/logo.png" type="image/png">
     
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -60,7 +52,10 @@
 </head>
 
 <body>
-    <!-- Skip to main content for accessibility -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <nav class="navbar" role="navigation" aria-label="Main navigation">
@@ -92,16 +87,20 @@
     <main id="main-content">
         <header id="home" class="hero">
             <div class="container">
-                <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <div class="hero-content" data-aos="fade-right">
                     <h1>Where Little Seeds Grow into Big Dreams! 🌱</h1>
                     <p>Forget boring classrooms! At Blossom Kids, every day is a magical adventure filled with laughter,
                         learning, and love. <strong>Admissions now open for little explorers.</strong></p>
                     <a href="#contact" class="btn-primary">Start the Adventure 🚀</a>
                 </div>
 
-                <div class="hero-image slider-container" data-aos="fade-left" data-aos-duration="1000">
-                    <button class="slider-btn prev" aria-label="Previous slide" onclick="changeSlide(-1)">❮</button>
-                    <button class="slider-btn next" aria-label="Next slide" onclick="changeSlide(1)">❯</button>
+                <div class="hero-image slider-container" data-aos="fade-left">
+                    <button class="slider-btn prev" aria-label="Previous slide" onclick="changeSlide(-1)">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next" aria-label="Next slide" onclick="changeSlide(1)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                     
                     <div class="slider-image fade active">
                         <img src="images/IMG-20250328-WA0008(1).jpg" alt="Happy children playing with colorful building blocks in bright classroom" loading="eager">
@@ -127,6 +126,9 @@
                         <span class="dot" onclick="currentSlide(5)" aria-label="Go to slide 5"></span>
                     </div>
                 </div>
+            </div>
+            <div class="scroll-down-indicator">
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
         </header>
 
@@ -162,27 +164,27 @@
                     <p>(And why parents trust us!)</p>
                 </div>
                 <div class="services-grid">
-                    <div class="card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
                         <h3>🎨 Creative Chaos</h3>
                         <p>We believe in getting messy! Painting, crafting, and building helps little brains grow fast.</p>
                     </div>
-                    <div class="card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
                         <h3>🏰 Safe Haven</h3>
                         <p>Our rooms are big, bright, and super safe. CCTV monitored with childproof facilities.</p>
                     </div>
-                    <div class="card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="card" data-aos="fade-up" data-aos-delay="300">
                         <h3>🤝 Best Friends Forever</h3>
                         <p>We teach kindness, sharing, and teamwork so your child makes friends for life.</p>
                     </div>
-                    <div class="card" data-aos="flip-up" data-aos-delay="400">
+                    <div class="card" data-aos="fade-up" data-aos-delay="400">
                         <h3>👩‍🏫 Caring Teachers</h3>
                         <p>Our trained educators treat every child with love and patience, just like family.</p>
                     </div>
-                    <div class="card" data-aos="flip-up" data-aos-delay="500">
+                    <div class="card" data-aos="fade-up" data-aos-delay="500">
                         <h3>📖 Fun Learning</h3>
                         <p>Interactive activities, storytelling, and games make learning an adventure!</p>
                     </div>
-                    <div class="card" data-aos="flip-up" data-aos-delay="600">
+                    <div class="card" data-aos="fade-up" data-aos-delay="600">
                         <h3>🎉 Special Events</h3>
                         <p>Regular celebrations, field trips, and cultural activities keep every day exciting.</p>
                     </div>
@@ -347,27 +349,27 @@
                     <p>Common questions answered</p>
                 </div>
                 <div class="faq-grid">
-                    <div class="faq-item" data-aos="flip-up" data-aos-delay="100">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
                         <h3>🧒 What is the minimum age?</h3>
                         <p>We accept children starting from 2 years old for our Pre-Nursery program.</p>
                     </div>
-                    <div class="faq-item" data-aos="flip-up" data-aos-delay="200">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
                         <h3>⏰ What are the timings?</h3>
                         <p>Our fun-filled day starts at 10:00 AM and wraps up at 1:30 PM (Monday to Friday).</p>
                     </div>
-                    <div class="faq-item" data-aos="flip-up" data-aos-delay="300">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                         <h3>🍎 Is food provided?</h3>
                         <p>We ask parents to pack healthy snacks. We provide filtered water and occasional treats!</p>
                     </div>
-                    <div class="faq-item" data-aos="flip-up" data-aos-delay="400">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                         <h3>🚌 Do you provide transport?</h3>
                         <p>Currently, we don't provide transportation. Parents drop and pick up their children.</p>
                     </div>
-                    <div class="faq-item" data-aos="flip-up" data-aos-delay="500">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
                         <h3>👥 Teacher-student ratio?</h3>
                         <p>We maintain a ratio of 1:10 to ensure personalized attention for every child.</p>
                     </div>
-                    <div class="faq-item" data-aos="flip-up" data-aos-delay="600">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
                         <h3>📚 What curriculum do you follow?</h3>
                         <p>We follow a play-based, child-centered curriculum that prepares kids for formal schooling.</p>
                     </div>
@@ -413,7 +415,6 @@
                     <form id="contactForm">
                         <input type="hidden" name="access_key" value="a4c270a9-62f6-4405-89cf-dc176bf6d3d9">
                         
-                        <!-- Honeypot for spam protection -->
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
 
                         <div class="form-group">
@@ -487,10 +488,6 @@
             </div>
         </div>
     </footer>
-
-    <a href="https://wa.me/918277452777" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>

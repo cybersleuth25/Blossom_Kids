@@ -1,11 +1,22 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- INITIALIZE ANIMATIONS ---
+    // --- PRELOADER ---
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }
+    });
+
+    // --- INITIALIZE ANIMATIONS (SPEED UP) ---
     AOS.init({
-        duration: 800,
+        duration: 500,     // Reduced from 800 for snappier load
         once: true,
-        offset: 100,
-        easing: 'ease-in-out'
+        offset: 50,        // Reduced from 100 so elements appear sooner
+        easing: 'ease-out-cubic' // Slightly snappier easing function
     });
 
     // --- HAMBURGER MENU ---
