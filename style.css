@@ -18,18 +18,14 @@
     
     --text-main: #2D3436;
     --text-light: #636E72;
-    
     /* -- FONTS -- */
     --font-head: 'Sniglet', cursive;
     --font-body: 'Quicksand', sans-serif;
-    
-    /* -- SHADOWS & BORDERS -- */
     --shadow-pop: 5px 5px 0px rgba(0,0,0,0.1); 
     --shadow-soft: 0 10px 30px rgba(255, 107, 149, 0.15);
     --radius-blob: 60% 40% 30% 70% / 60% 30% 70% 40%;
 }
 
-/* --- RESET & GLOBAL --- */
 html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
     font-family: var(--font-body);

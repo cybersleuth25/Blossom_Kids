@@ -7,8 +7,6 @@ This is a fully responsive, professional website designed for **Blossom Kids**, 
 
 ---
 
-## ✨ New Features & Improvements (v2.0)
-
 ### 🎯 Major Enhancements
 
 #### 1. **SEO Optimization**

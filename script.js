@@ -341,8 +341,6 @@ document.addEventListener("DOMContentLoaded", function() {
             updateCounter();
         }
     });
-
-    // --- 11. SCROLL TO TOP BUTTON ---
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.innerHTML = '↑';
     scrollTopBtn.className = 'scroll-top-btn';
@@ -369,7 +367,5 @@ document.addEventListener("DOMContentLoaded", function() {
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-
-    // --- 12. WELCOME LOG ---
     console.log('%c🌸 Blossom Kids Loaded 🌸', 'color: #D81B60; font-size: 16px; font-weight: bold;');
 });
