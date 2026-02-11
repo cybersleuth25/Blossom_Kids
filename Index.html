@@ -12,7 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Patrick+Hand&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -41,14 +41,7 @@
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ],
+    "dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
     "opens": "09:00",
     "closes": "16:00"
   },
@@ -177,10 +170,6 @@
         </section>
 
         <section id="features" class="section-colorful">
-            <div class="wave-top">
-                <svg viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
-            </div>
-            
             <div class="container">
                 <div class="section-header text-center" data-aos="fade-up">
                     <h2 class="text-white">Why Kids <span class="highlight-yellow">Love Us</span> ❤️</h2>
@@ -205,10 +194,6 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="wave-bottom">
-                <svg viewBox="0 0 1440 320"><path fill="#FFF5F7" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-            </div>
         </section>
 
         <section id="daily-routine" class="section-pinkish">
@@ -216,40 +201,55 @@
                 <div class="section-header text-center">
                     <h2>A Day in the <span class="highlight-pink">Life</span> ☀️</h2>
                 </div>
+                
                 <div class="routine-path">
-                    <div class="routine-step" data-aos="fade-right">
-                        <div class="time-bubble">10:00</div>
+                    <div class="routine-step" data-aos="fade-up">
                         <div class="step-card">
-                            <h4>Prayer & Assembly</h4>
-                            <p>Starting the day with gratitude.</p>
+                            <div class="time-bubble">10:00</div>
+                            <div class="step-content">
+                                <h4>Prayer & Assembly</h4>
+                                <p>Starting the day with gratitude.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="routine-step right" data-aos="fade-left">
-                        <div class="time-bubble">10:30</div>
+
+                    <div class="routine-step" data-aos="fade-up" data-aos-delay="100">
                         <div class="step-card">
-                            <h4>Learning Time 📝</h4>
-                            <p>Letters, numbers & concepts.</p>
+                            <div class="time-bubble">10:30</div>
+                            <div class="step-content">
+                                <h4>Learning Time 📝</h4>
+                                <p>Letters, numbers & concepts.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="routine-step" data-aos="fade-right">
-                        <div class="time-bubble">11:30</div>
+
+                    <div class="routine-step" data-aos="fade-up" data-aos-delay="200">
                         <div class="step-card">
-                            <h4>Rhymes & Music 🎶</h4>
-                            <p>Moving and grooving!</p>
+                            <div class="time-bubble">11:30</div>
+                            <div class="step-content">
+                                <h4>Rhymes & Music 🎶</h4>
+                                <p>Moving and grooving!</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="routine-step right" data-aos="fade-left">
-                        <div class="time-bubble">12:30</div>
+
+                    <div class="routine-step" data-aos="fade-up" data-aos-delay="300">
                         <div class="step-card">
-                            <h4>Creative Play 🎨</h4>
-                            <p>Art, craft and free play.</p>
+                            <div class="time-bubble">12:30</div>
+                            <div class="step-content">
+                                <h4>Creative Play 🎨</h4>
+                                <p>Art, craft and free play.</p>
+                            </div>
                         </div>
                     </div>
-                     <div class="routine-step" data-aos="fade-right">
-                        <div class="time-bubble">01:30</div>
+
+                    <div class="routine-step" data-aos="fade-up" data-aos-delay="400">
                         <div class="step-card">
-                            <h4>Home Time 🏠</h4>
-                            <p>Goodbye songs and pickup.</p>
+                            <div class="time-bubble">01:30</div>
+                            <div class="step-content">
+                                <h4>Home Time 🏠</h4>
+                                <p>Goodbye songs and pickup.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -429,8 +429,8 @@
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <h3>Blossom Kids</h3>
-                <img src="images/logo.png" alt="Blossom Kids Logo" class="footer-logo-img">
+                <h3><span id="Blossom">Blossom</span><span id="Kids"> Kids</span></h3>
+                <img src="images/logo.png" alt="Blossom Kids Logo" style="width: 100px; height: auto;" class="circle-image" >
                 <p>Nurturing Young Minds with Joy in Chikmagalur.</p>
                 <div class="social-links">
                     <a href="mailto:blossomkids.chikmagalur@gmail.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
@@ -446,5 +446,41 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+
+    <div id="sb-chatbot-widget">
+        <button id="sb-toggle-btn">
+            <span class="sb-icon">🦉</span>
+            <span class="sb-text">Need Help?</span>
+        </button>
+
+        <div id="sb-chat-window" class="sb-hidden">
+            <div class="sb-header">
+                <div class="sb-avatar">🦉</div>
+                <div class="sb-info">
+                    <h3>School Assistant</h3>
+                    <span class="sb-status">● Online</span>
+                </div>
+                <button id="sb-close-btn">×</button>
+            </div>
+
+            <div id="sb-messages">
+                <div class="sb-msg sb-bot">
+                    <div class="sb-bubble">
+                        Hello! Welcome to Blossom Kids. How can I help you?
+                    </div>
+                </div>
+                <div class="sb-chips">
+                    <button class="sb-chip" data-ask="admissions">Admissions 📝</button>
+                    <button class="sb-chip" data-ask="transport">Transport 🚌</button>
+                    <button class="sb-chip" data-ask="fees">Fees 💰</button>
+                </div>
+            </div>
+
+            <div class="sb-input-area">
+                <input type="text" id="sb-input" placeholder="Type a message..." autocomplete="off">
+                <button id="sb-send-btn">➤</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
