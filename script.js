@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if AOS library is loaded to prevent errors
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 600,      // Slightly smoother than 500
+            duration: 600,
             once: true,
             offset: 50,
             easing: 'ease-out-cubic'
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Security/A11y: Update aria state
             hamburger.setAttribute("aria-expanded", isExpanded);
             
-            // Prevent scrolling when menu is open (UX improvement)
+            // Prevent scrolling when menu is open
             document.body.style.overflow = isExpanded ? 'hidden' : '';
         });
 
@@ -60,12 +60,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // --- 4. SECURE FORM SUBMISSION ---
+    // --- 4. SECURE FORM SUBMISSION (With Rate Limiting) ---
     const contactForm = document.getElementById("contactForm");
     const submitBtn = document.getElementById("submitBtn");
     const statusMessage = document.getElementById("statusMessage");
 
-    // Helper: Validate Phone Format (10-15 digits)
+    // Helper: Validate Phone Format
     function isValidPhone(phone) {
         const re = /^[0-9]{10,15}$/;
         return re.test(String(phone).trim());
@@ -77,33 +77,51 @@ document.addEventListener("DOMContentLoaded", function() {
         return re.test(String(email).toLowerCase().trim());
     }
 
-    // Security: Sanitize Input (Remove HTML tags to prevent XSS)
+    // Security: Sanitize Input (Remove HTML tags)
     function sanitizeInput(input) {
         const div = document.createElement('div');
         div.textContent = input;
         return div.innerHTML;
     }
 
+    // SECURITY: Client-Side Rate Limit (1 Hour)
+    function checkRateLimit() {
+        const lastSubmission = localStorage.getItem('lastFormSubmission');
+        if (lastSubmission) {
+            const timeDiff = Date.now() - parseInt(lastSubmission);
+            const oneHour = 60 * 60 * 1000;
+            if (timeDiff < oneHour) {
+                return false; // Block submission
+            }
+        }
+        return true; // Allow submission
+    }
+
     if (contactForm) {
         contactForm.addEventListener("submit", function(event) {
             event.preventDefault();
 
-            // --- SECURITY: HONEYPOT CHECK ---
-            // If the hidden 'botcheck' checkbox is checked, it's a bot. Stop here.
+            // 1. Check Rate Limit
+            if (!checkRateLimit()) {
+                showMessage("You have already sent a message recently. Please wait a while.", "error");
+                return;
+            }
+
+            // 2. Check Honeypot (Bot Protection)
             const botCheck = contactForm.querySelector('input[name="botcheck"]');
             if (botCheck && botCheck.checked) {
                 console.log("Bot detected. Submission blocked.");
                 return; 
             }
 
-            // Get and Sanitize Values
+            // 3. Get and Sanitize Values
             const name = sanitizeInput(document.getElementById("name").value.trim());
             const phone = sanitizeInput(document.getElementById("phone").value.trim());
             const emailInput = document.getElementById("email");
             const email = emailInput ? sanitizeInput(emailInput.value.trim()) : "";
             const message = sanitizeInput(document.getElementById("message").value.trim());
 
-            // Validation Logic
+            // 4. Validation
             if (name === "" || phone === "" || message === "") {
                 showMessage("Please fill out all required fields.", "error");
                 return; 
@@ -119,13 +137,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
 
-            // Lock the button to prevent double-sends (Rate Limiting)
+            // 5. Submit
             submitBtn.disabled = true;
             submitBtn.textContent = "Sending... ⏳";
             
-            // Create FormData with sanitized values
             const formData = new FormData(contactForm);
-            // Overwrite with sanitized values to be safe
             formData.set('name', name);
             formData.set('message', message);
 
@@ -139,7 +155,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     showMessage("Thank you! We'll call you soon! 🚀", "success");
                     contactForm.reset();
                     
-                    // Optional: Analytics Event
+                    // Set Rate Limit Timestamp
+                    localStorage.setItem('lastFormSubmission', Date.now().toString());
+                    
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'form_submission', {
                             'event_category': 'Contact Form'
@@ -160,7 +178,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Helper: Display Status Message (Safe from XSS via textContent)
     function showMessage(message, type) {
         if (statusMessage) {
             statusMessage.textContent = message;
@@ -176,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // --- 5. HERO SLIDER (With Accessibility Updates) ---
+    // --- 5. HERO SLIDER ---
     let slideIndex = 0;
     let autoSlideTimer;
     const slides = document.querySelectorAll('.slider-image');
@@ -187,14 +204,11 @@ document.addEventListener("DOMContentLoaded", function() {
         showSlide(slideIndex);
         startAutoSlide();
         
-        // Pause on hover (UX improvement)
         const sliderContainer = document.querySelector('.slider-container');
         if (sliderContainer) {
             sliderContainer.addEventListener('mouseenter', stopAutoSlide);
             sliderContainer.addEventListener('mouseleave', startAutoSlide);
         }
-    } else {
-        console.warn('Slider: No images found.');
     }
 
     function showSlide(n) {
@@ -204,18 +218,16 @@ document.addEventListener("DOMContentLoaded", function() {
         else if (n < 0) slideIndex = totalSlides - 1;
         else slideIndex = n;
 
-        // Reset state
         slides.forEach(slide => slide.classList.remove('active'));
         dots.forEach(dot => {
             dot.classList.remove('active');
-            dot.setAttribute('aria-pressed', 'false'); // A11y Update
+            dot.setAttribute('aria-pressed', 'false');
         });
 
-        // Set active state
         if (slides[slideIndex]) slides[slideIndex].classList.add('active');
         if (dots[slideIndex]) {
             dots[slideIndex].classList.add('active');
-            dots[slideIndex].setAttribute('aria-pressed', 'true'); // A11y Update
+            dots[slideIndex].setAttribute('aria-pressed', 'true');
         }
     }
 
@@ -230,7 +242,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (autoSlideTimer) clearInterval(autoSlideTimer);
     }
 
-    // Expose control functions to Global Scope for HTML Buttons
     window.changeSlide = function(n) {
         stopAutoSlide();
         showSlide(slideIndex + n);
@@ -243,13 +254,12 @@ document.addEventListener("DOMContentLoaded", function() {
         startAutoSlide();
     };
 
-    // Keyboard Control
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') changeSlide(-1);
         if (e.key === 'ArrowRight') changeSlide(1);
     });
 
-    // --- 6. SMOOTH SCROLL (With Fixed Header Offset) ---
+    // --- 6. SMOOTH SCROLL ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -260,7 +270,6 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if (target) {
                 const navbar = document.querySelector('.navbar');
-                // Calculate header height dynamically or fallback to 80
                 const navHeight = navbar ? navbar.offsetHeight : 80;
                 const targetPosition = target.offsetTop - navHeight - 10;
                 
@@ -277,10 +286,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
     function highlightNavigation() {
         const scrollY = window.pageYOffset;
-        
         sections.forEach(section => {
             const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 150; // Larger offset for better triggering
+            const sectionTop = section.offsetTop - 150;
             const sectionId = section.getAttribute('id');
             const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
             
@@ -292,32 +300,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     window.addEventListener('scroll', highlightNavigation);
 
-    // --- 8. LAZY LOADING (Performance) ---
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                    }
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-
-        document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
-    }
-
-    // --- 9. ACCESSIBILITY: REDUCED MOTION ---
+    // --- 8. ACCESSIBILITY: REDUCED MOTION ---
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches && typeof AOS !== 'undefined') {
         AOS.init({ disable: true });
     }
 
-    // --- 10. INPUT ENHANCEMENTS & CHAR COUNTER ---
+    // --- 9. INPUT ENHANCEMENTS ---
     const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
-    
     formInputs.forEach(input => {
         input.addEventListener('focus', () => input.parentElement.classList.add('focused'));
         input.addEventListener('blur', () => {
@@ -341,6 +330,7 @@ document.addEventListener("DOMContentLoaded", function() {
             updateCounter();
         }
     });
+
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.innerHTML = '↑';
     scrollTopBtn.className = 'scroll-top-btn';
