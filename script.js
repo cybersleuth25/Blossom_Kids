@@ -1,19 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     // =========================================
     // 1. PRELOADER
     // =========================================
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             preloader.style.opacity = '0';
             setTimeout(() => {
                 preloader.style.display = 'none';
             }, 500);
         });
-        
+
         setTimeout(() => {
-            if(preloader.style.display !== 'none') {
+            if (preloader.style.display !== 'none') {
                 preloader.style.opacity = '0';
                 setTimeout(() => { preloader.style.display = 'none'; }, 500);
             }
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 2. NAVBAR SCROLL EFFECT (Expanding)
     // =========================================
     const navbar = document.querySelector('.navbar');
-    
+
     window.addEventListener('scroll', () => {
         // When user scrolls down more than 50px
         if (window.scrollY > 50) {
@@ -112,13 +112,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if (autoSlideTimer) clearInterval(autoSlideTimer);
     }
 
-    window.changeSlide = function(n) {
+    window.changeSlide = function (n) {
         stopAutoSlide();
         showSlide(slideIndex + n);
         startAutoSlide();
     };
 
-    window.currentSlide = function(n) {
+    window.currentSlide = function (n) {
         stopAutoSlide();
         showSlide(n - 1);
         startAutoSlide();
@@ -141,9 +141,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (contactForm) {
-        contactForm.addEventListener("submit", function(event) {
+        contactForm.addEventListener("submit", function (event) {
             event.preventDefault();
-            
+
             const name = document.getElementById("name").value.trim();
             const phone = document.getElementById("phone").value.trim();
             const message = document.getElementById("message").value.trim();
@@ -158,23 +158,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const formData = new FormData(contactForm);
 
-            fetch("https://api.web3forms.com/submit", { 
+            fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                body: formData 
+                body: formData
             })
-            .then(response => response.json()) 
-            .then(data => {
-                if (data.success) {
-                    showMessage("Thank you! We'll call you soon! 🚀", "success");
-                    contactForm.reset();
-                } else {
-                    showMessage("Something went wrong. Try again.", "error");
-                }
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Send Message 🚀";
-            });
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showMessage("Thank you! We'll call you soon! 🚀", "success");
+                        contactForm.reset();
+                    } else {
+                        showMessage("Something went wrong. Try again.", "error");
+                    }
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Send Message 🚀";
+                });
         });
     }
 
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function() {
             msgDiv.className = isUser ? 'sb-msg sb-user' : 'sb-msg sb-bot';
             const bubble = document.createElement('div');
             bubble.className = 'sb-bubble';
-            bubble.innerHTML = text; 
+            bubble.innerHTML = text;
             msgDiv.appendChild(bubble);
             sbMessages.appendChild(msgDiv);
             sbMessages.scrollTop = sbMessages.scrollHeight;
@@ -218,17 +218,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (lowerText.includes('transport') || lowerText.includes('bus')) {
                 response = "<b>Transport Update:</b><br>We do not currently provide transport services. Parents are requested to arrange their own commute. 🚗";
-            } 
-            else if (lowerText.includes('admission') || lowerText.includes('admissions') || lowerText.includes('enroll') || lowerText.includes('enrollment') || lowerText.includes('join') || lowerText.includes('apply')(lowerText.includes('admit'))) {
+            }
+            else if (lowerText.includes('admission') || lowerText.includes('admissions') || lowerText.includes('enroll') || lowerText.includes('enrollment') || lowerText.includes('join') || lowerText.includes('apply') || lowerText.includes('admit')) {
                 response = "Admissions are currently open! You can download the form from our website or visit the office between 9 AM - 2 PM. 📝";
             }
             else if (lowerText.includes('fee')) {
                 response = "Our fees range from <strong>₹20k - ₹40k</strong> depending on the class. Please contact the office for the exact structure. 💰";
             }
-            else if (lowerText.includes('contact') || lowerText.includes('phone') || lowerText.includes('email')|| lowerText.includes('reach')|| lowerText.includes('call')|| lowerText.includes('number')) {
+            else if (lowerText.includes('contact') || lowerText.includes('phone') || lowerText.includes('email') || lowerText.includes('reach') || lowerText.includes('call') || lowerText.includes('number')) {
                 response = "You can reach us at <a href='tel:+91 827745277'>+91 827745277</a> or email us at <a href='mailto:blossomkids.chikmagalur@gmail.com'>blossomkids.chikmagalur@gmail.com</a>";
             }
-            else if (lowerText.includes('timing') || lowerText.includes('hours') || lowerText.includes('open') || lowerText.includes('close')|| lowerText.includes('time')|| lowerText.includes('timings')) {
+            else if (lowerText.includes('timing') || lowerText.includes('hours') || lowerText.includes('open') || lowerText.includes('close') || lowerText.includes('time') || lowerText.includes('timings')) {
                 response = "Our school timings are from 9:30 AM to 3:30 PM, Monday to Friday. 🕗";
             }
             else if (lowerText.includes('holiday') || lowerText.includes('vacation') || lowerText.includes('break') || lowerText.includes('off')) {
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function() {
             else if (lowerText.includes('daycare') || lowerText.includes('playgroup') || lowerText.includes('nursery') || lowerText.includes('preschool')) {
                 response = "We offer daycare and preschool programs for children aged 1.5 to 5 years. Our curriculum focuses on play-based learning and social development. 🧸";
             }
-            else if (lowerText.includes('hello') || lowerText.includes('hi')|| lowerText.includes('hey')|| lowerText.includes('namaste')|| lowerText.includes('assa')) {
+            else if (lowerText.includes('hello') || lowerText.includes('hi') || lowerText.includes('hey') || lowerText.includes('namaste') || lowerText.includes('assa')) {
                 response = "Hello! 👋 Welcome to Blossom Kids. How can I help you today?";
             }
 
@@ -272,9 +272,9 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.addEventListener('click', () => {
                 const topic = btn.getAttribute('data-ask');
                 let messageText = "";
-                if(topic === 'admissions') messageText = "Tell me about Admissions";
-                if(topic === 'transport') messageText = "Do you have Transport?";
-                if(topic === 'fees') messageText = "What are the Fees?";
+                if (topic === 'admissions') messageText = "Tell me about Admissions";
+                if (topic === 'transport') messageText = "Do you have Transport?";
+                if (topic === 'fees') messageText = "What are the Fees?";
                 sbSendMessage(messageText);
             });
         });
