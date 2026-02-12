@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (lowerText.includes('transport') || lowerText.includes('bus')) {
                 response = "<b>Transport Update:</b><br>We do not currently provide transport services. Parents are requested to arrange their own commute. 🚗";
             } 
-            else if (lowerText.includes('admission')) {
+            else if (lowerText.includes('admission') || lowerText.includes('admissions') || lowerText.includes('enroll') || lowerText.includes('enrollment') || lowerText.includes('join') || lowerText.includes('apply')(lowerText.includes('admit'))) {
                 response = "Admissions are currently open! You can download the form from our website or visit the office between 9 AM - 2 PM. 📝";
             }
             else if (lowerText.includes('fee')) {
@@ -230,6 +230,33 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             else if (lowerText.includes('timing') || lowerText.includes('hours') || lowerText.includes('open') || lowerText.includes('close')|| lowerText.includes('time')|| lowerText.includes('timings')) {
                 response = "Our school timings are from 9:30 AM to 3:30 PM, Monday to Friday. 🕗";
+            }
+            else if (lowerText.includes('holiday') || lowerText.includes('vacation') || lowerText.includes('break') || lowerText.includes('off')) {
+                response = "Our school holidays are on the 1st and 3rd Saturdays of each month, as well as all major public holidays. 🎉";
+            }
+            else if (lowerText.includes('curriculum') || lowerText.includes('syllabus') || lowerText.includes('program') || lowerText.includes('course')) {
+                response = "We focuses on holistic development and critical thinking. 📚";
+            }
+            else if (lowerText.includes('activities') || lowerText.includes('extracurricular') || lowerText.includes('sports') || lowerText.includes('clubs')) {
+                response = "We offer a variety of extracurricular activities including art, music, dance, and sports. 🏀🎨🎶";
+            }
+            else if (lowerText.includes('safety') || lowerText.includes('security') || lowerText.includes('health') || lowerText.includes('wellbeing')) {
+                response = "The safety and wellbeing of our students is our top priority. We have strict safety protocols, trained staff, and regular health check-ups. 🛡️";
+            }
+            else if (lowerText.includes('events') || lowerText.includes('functions') || lowerText.includes('celebrations') || lowerText.includes('fests')) {
+                response = "We regularly organize events and celebrations to foster community spirit. Stay tuned to our website and social media for updates! 🎉";
+            }
+            else if (lowerText.includes('staff') || lowerText.includes('teachers') || lowerText.includes('faculty') || lowerText.includes('principal') || lowerText.includes('director')) {
+                response = "Our staff is highly qualified and dedicated to providing the best education and care for our students. 👩‍🏫👨‍🏫";
+            }
+            else if (lowerText.includes('feedback') || lowerText.includes('complaint') || lowerText.includes('suggestion') || lowerText.includes('review')) {
+                response = "We value your feedback! Please contact our office or email us at <a href='mailto:blossomkids.chikmagalur@gmail.com'>blossomkids.chikmagalur@gmail.com</a>";
+            }
+            else if (lowerText.includes('location') || lowerText.includes('address') || lowerText.includes('where')) {
+                response = "We are located at <strong>Pension Mohalla, 3rd Cross, Chikmagalur, Karnataka, India</strong>. You can find us on Google Maps for directions! 📍";
+            }
+            else if (lowerText.includes('daycare') || lowerText.includes('playgroup') || lowerText.includes('nursery') || lowerText.includes('preschool')) {
+                response = "We offer daycare and preschool programs for children aged 1.5 to 5 years. Our curriculum focuses on play-based learning and social development. 🧸";
             }
             else if (lowerText.includes('hello') || lowerText.includes('hi')|| lowerText.includes('hey')|| lowerText.includes('namaste')|| lowerText.includes('assa')) {
                 response = "Hello! 👋 Welcome to Blossom Kids. How can I help you today?";

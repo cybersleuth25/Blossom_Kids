@@ -27,6 +27,7 @@
         "button-name": "off",
         "link-name": "off"
       }
-    ]
+    ],
+    "css-prefix-order": "off"
   }
 }
