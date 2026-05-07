@@ -4,23 +4,23 @@
 
 :root {
     /* -- PALETTE (Original Pastel) -- */
-    --c-pink: #FF6B95;      
+    --c-pink: #FF8DA1;
     --c-pink-dark: #D6336C;
-    --c-blue: #4CC9F0;      
+    --c-blue: #5CD6FF;
     --c-blue-dark: #0096C7;
     --c-yellow: #FFD93D;    
     --c-green: #6BCB77;     
     --c-purple: #9D4EDD;    
     
     /* -- BACKGROUNDS -- */
-    --bg-cream: #FFF9F5;    
+    --bg-cream: #F4F7F6;
     --bg-white: #FFFFFF;
     
     --text-main: #2D3436;
     --text-light: #636E72;
     
     /* -- FONTS (Original) -- */
-    --font-head: 'Sniglet', cursive;
+    --font-head: "Outfit", sans-serif;
     --font-body: 'Quicksand', sans-serif;
     
     /* -- SOFT SHADOWS -- */
