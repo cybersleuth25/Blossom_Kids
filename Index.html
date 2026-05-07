@@ -103,8 +103,8 @@
                 <div class="hero-visual" data-aos="zoom-out-left">
                     <div class="blob-border"></div>
                     <div class="slider-container">
-                        <button class="slider-btn prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="slider-btn next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="slider-btn prev" onclick="changeSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="slider-btn next" onclick="changeSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
                         
                         <div class="slider-image fade">
                             <img src="images/IMG-20250328-WA0008-1.jpg" alt="Kids playing">
@@ -460,7 +460,7 @@
                     <h3>School Assistant</h3>
                     <span class="sb-status">● Online</span>
                 </div>
-                <button id="sb-close-btn">×</button>
+                <button id="sb-close-btn" aria-label="Close chat">×</button>
             </div>
 
             <div id="sb-messages">
@@ -478,7 +478,7 @@
 
             <div class="sb-input-area">
                 <input type="text" id="sb-input" placeholder="Type a message..." autocomplete="off">
-                <button id="sb-send-btn">➤</button>
+                <button id="sb-send-btn" aria-label="Send message">➤</button>
             </div>
         </div>
     </div>
