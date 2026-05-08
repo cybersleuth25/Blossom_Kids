@@ -255,13 +255,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showSlide(n) {
         if (totalSlides === 0) return;
+
+        // Remove active class from the current slide and dot
+        if (slides[slideIndex]) slides[slideIndex].classList.remove('active');
+        if (dots[slideIndex]) dots[slideIndex].classList.remove('active');
+
         if (n >= totalSlides) slideIndex = 0;
         else if (n < 0) slideIndex = totalSlides - 1;
         else slideIndex = n;
 
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-
+        // Add active class to the new slide and dot
         if (slides[slideIndex]) slides[slideIndex].classList.add('active');
         if (dots[slideIndex]) dots[slideIndex].classList.add('active');
     }
