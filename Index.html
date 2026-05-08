@@ -208,69 +208,35 @@
             </a>
           </div>
 
-          <!-- TRUST BAR -->
-          <div class="lp-trust" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
-            <div class="lp-trust-item">
-              <span class="lp-trust-icon">🎓</span>
-              <span>Expert Teachers</span>
-            </div>
-            <div class="lp-trust-divider"></div>
-            <div class="lp-trust-item">
-              <span class="lp-trust-icon">🌱</span>
-              <span>Play-Based Learning</span>
-            </div>
-            <div class="lp-trust-divider"></div>
-            <div class="lp-trust-item">
-              <span class="lp-trust-icon">🏆</span>
-              <span>#1 in Chikmagalur</span>
-            </div>
-            <div class="lp-trust-divider"></div>
-            <div class="lp-trust-item">
-              <span class="lp-trust-icon">&#x2764;&#xfe0f;</span>
-              <span>Safe &amp; Caring</span>
-            </div>
-          </div>
-
-          <!-- CINEMATIC PHOTO FRAME -->
-          <div class="lp-frame" data-aos="zoom-in" data-aos-duration="1100" data-aos-delay="200">
-            <div class="lp-frame-inner">
-              <div class="lp-frame-tabs">
-                <span class="lp-tab active" data-slide="0">Learning</span>
-                <span class="lp-tab" data-slide="1">Playing</span>
-                <span class="lp-tab" data-slide="2">Creating</span>
-                <span class="lp-tab" data-slide="3">Growing</span>
-              </div>
-
-              <div class="lp-slider">
-                <div class="lp-slide active">
-                  <img src="images/IMG-20250328-WA0008-1.jpg" alt="Kids learning at Blossom Kids preschool" />
+                <div class="hero-visual" data-aos="zoom-out-left">
+                    <div class="blob-border"></div>
+                    <div class="slider-container">
+                        <button class="slider-btn prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="slider-btn next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                        
+                        <div class="slider-image fade">
+                            <img src="images/IMG-20250328-WA0008-1.jpg" alt="Kids playing">
+                        </div>
+                        <div class="slider-image fade">
+                            <img src="images/IMG-20250815-WA0028.jpg" alt="Learning activities">
+                        </div>
+                         <div class="slider-image fade">
+                            <img src="images/IMG-20250815-WA0031.jpg" alt="Creative arts">
+                        </div>
+                        <div class="slider-image fade">
+                            <img src="images/IMG-20250717-WA0007.jpg" alt="Outdoor play">
+                        </div>
+                        
+                        <div class="slider-dots">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="lp-slide">
-                  <img src="images/IMG-20250815-WA0028.jpg" alt="Children playing at Blossom Kids" />
-                </div>
-                <div class="lp-slide">
-                  <img src="images/IMG-20250815-WA0031.jpg" alt="Creative arts at Blossom Kids" />
-                </div>
-                <div class="lp-slide">
-                  <img src="images/IMG-20250717-WA0007.jpg" alt="Outdoor activities at Blossom Kids" />
-                </div>
-              </div>
-
-              <div class="lp-frame-caption">
-                <span class="lp-caption-dot"></span>
-                <span id="lp-caption-text">Every day is a new adventure</span>
-              </div>
             </div>
-          </div>
-
-          <!-- SCROLL CUE -->
-          <div class="lp-scroll-cue">
-            <span>Scroll to discover</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          </div>
-
-        </div>
-      </header>
+        </header>
 
 
       <!-- PROGRAMS -->
@@ -1153,41 +1119,38 @@
 
     <!-- CHATBOT -->
     <div id="sb-chatbot-widget">
-      <button id="sb-toggle-btn">
-        <span class="sb-icon">🦉</span>
-        <span class="sb-text">Need Help?</span>
-      </button>
-      <div id="sb-chat-window" class="sb-hidden">
-        <div class="sb-header">
-          <div class="sb-avatar">🦉</div>
-          <div class="sb-info">
-            <h3>School Assistant</h3>
-            <span class="sb-status">● Online</span>
-          </div>
-          <button id="sb-close-btn">×</button>
-        </div>
-        <div id="sb-messages">
-          <div class="sb-msg sb-bot">
-            <div class="sb-bubble">
-              Hello! Welcome to Blossom Kids. How can I help you?
+        <button id="sb-toggle-btn">
+            <span class="sb-icon">🦉</span>
+            <span class="sb-text">Need Help?</span>
+        </button>
+
+        <div id="sb-chat-window" class="sb-hidden">
+            <div class="sb-header">
+                <div class="sb-avatar">🦉</div>
+                <div class="sb-info">
+                    <h3>School Assistant</h3>
+                    <span class="sb-status">● Online</span>
+                </div>
+                <button id="sb-close-btn">×</button>
             </div>
-          </div>
-          <div class="sb-chips">
-            <button class="sb-chip" data-ask="admissions">Admissions 📝</button>
-            <button class="sb-chip" data-ask="transport">Transport 🚌</button>
-            <button class="sb-chip" data-ask="fees">Fees 💰</button>
-          </div>
-        </div>
-        <div class="sb-input-area">
-          <input
-            type="text"
-            id="sb-input"
-            placeholder="Type a message..."
-            autocomplete="off"
-          />
-          <button id="sb-send-btn">
-            <i class="fa-solid fa-paper-plane"></i>
-          </button>
+
+            <div id="sb-messages">
+                <div class="sb-msg sb-bot">
+                    <div class="sb-bubble">
+                        Hello! Welcome to Blossom Kids. How can I help you?
+                    </div>
+                </div>
+                <div class="sb-chips">
+                    <button class="sb-chip" data-ask="admissions">Admissions 📝</button>
+                    <button class="sb-chip" data-ask="transport">Transport 🚌</button>
+                    <button class="sb-chip" data-ask="fees">Fees 💰</button>
+                </div>
+            </div>
+
+            <div class="sb-input-area">
+                <input type="text" id="sb-input" placeholder="Type a message..." autocomplete="off">
+                <button id="sb-send-btn">➤</button>
+            </div>
         </div>
       </div>
     </div>
