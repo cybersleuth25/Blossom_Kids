@@ -1,110 +1,218 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blossom Kids | Where Fun Meets Learning</title>
-    <meta name="description" content="Blossom Kids Preschool in Chikmagalur - Best creative learning for kids.">
-    
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; frame-src https://www.google.com https://maps.google.com;">
-    
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <meta
+      name="description"
+      content="Blossom Kids Preschool in Chikmagalur - Best creative learning for kids."
+    />
+    <meta name="theme-color" content="#FF6B95" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Patrick+Hand&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Preschool",
-  "name": "Blossom Kids",
-  "image": "https://blossomkids.netlify.app/images/logo.png",
-  "@id": "https://blossomkids.netlify.app",
-  "url": "https://blossomkids.netlify.app",
-  "telephone": "+918277452777",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Pension Mohalla, 3rd Cross",
-    "addressLocality": "Chikmagalur",
-    "postalCode": "577101",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 13.3153, 
-    "longitude": 75.7754
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
-    "opens": "09:00",
-    "closes": "16:00"
-  },
-  "priceRange": "20000-40000 INR per year"
-}
-</script>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; frame-src https://www.google.com https://maps.google.com;"
+    />
 
-<body>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Preschool",
+        "name": "Blossom Kids",
+        "image": "https://blossomkids.netlify.app/images/logo.png",
+        "@id": "https://blossomkids.netlify.app",
+        "url": "https://blossomkids.netlify.app",
+        "telephone": "+918277452777",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Pension Mohalla, 3rd Cross",
+          "addressLocality": "Chikmagalur",
+          "postalCode": "577101",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 13.3153,
+          "longitude": 75.7754
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "16:00"
+        },
+        "priceRange": "20000-40000 INR per year"
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- THREE.JS 3D CANVAS -->
+    <canvas id="three-canvas" aria-hidden="true"></canvas>
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="scroll-progress"></div>
+
+    <!-- CURSOR SPARKLE TRAIL -->
+    <div id="cursor-trail" aria-hidden="true"></div>
+
+    <!-- PRELOADER v2 — PETAL BLOOM -->
     <div id="preloader">
-        <div class="spinner"></div>
-    </div>
-
-    <div class="background-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
-
-    <nav class="navbar" role="navigation">
-        <div class="container nav-container">
-            <a href="#home" class="logo">
-                <img src="images/logo.png" alt="Blossom Kids Logo" class="nav-logo-img">
-                <div class="logo-text">
-                    <span id="Blossom">Blossom</span>
-                    <span id="Kids">Kids</span>
-                </div>
-            </a>
-
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#daily-routine">Daily Life</a></li>
-                <li><a href="#admissions">Admissions</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact" class="btn-nav">Enroll Now 🚀</a></li>
-            </ul>
+      <div class="preloader-inner">
+        <div class="preloader-bloom">
+          <div class="petal p1"></div>
+          <div class="petal p2"></div>
+          <div class="petal p3"></div>
+          <div class="petal p4"></div>
+          <div class="petal p5"></div>
+          <div class="petal p6"></div>
+          <div class="petal-center"></div>
         </div>
+        <p class="preloader-text">Blooming magic for your little ones...</p>
+        <div class="preloader-bar"><div class="preloader-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- FLOATING PARTICLES -->
+    <div class="particles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ========== NAVBAR — CLEAN MINIMAL ========== -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner">
+
+        <!-- LOGO -->
+        <a href="#home" class="logo" aria-label="Blossom Kids Home">
+          <img src="images/logo.png" alt="Blossom Kids" class="nav-logo-img" />
+          <div class="logo-text">
+            <span class="logo-blossom">Blossom</span>
+            <span class="logo-kids">Kids</span>
+          </div>
+        </a>
+
+        <!-- DESKTOP LINKS -->
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#daily-routine">Daily Life</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+
+        <!-- RIGHT ACTIONS -->
+        <div class="nav-actions">
+          <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+            <i class="fa-solid fa-moon" id="darkIcon"></i>
+          </button>
+          <a href="#contact" class="nav-cta">Enroll Now</a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE DRAWER -->
+      <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="mm-inner">
+          <a href="#home" class="mm-link">Home</a>
+          <a href="#programs" class="mm-link">Programs</a>
+          <a href="#daily-routine" class="mm-link">Daily Life</a>
+          <a href="#admissions" class="mm-link">Admissions</a>
+          <a href="#gallery" class="mm-link">Gallery</a>
+          <a href="#contact" class="mm-link mm-cta">Enroll Now →</a>
+          <div class="mm-footer">
+            <a href="tel:+918277452777"><i class="fa-solid fa-phone"></i> +91 8277452777</a>
+            <div class="mm-socials">
+              <a href="https://www.instagram.com/_blossom_kids_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@Blossom_Kids_Chikmangalur" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/918277452777" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
 
+    <!-- ========== MAIN CONTENT ========== -->
     <main id="main-content">
-        <header id="home" class="hero">
-            <div class="container hero-grid">
-                <div class="hero-content" data-aos="zoom-out-right">
-                    <span class="badge-pill">✨ Admissions Open 2025-26</span>
-                    <h1>Where Little Seeds Grow into <span class="highlight-text">Big Dreams!</span></h1>
-                    <p>Forget boring classrooms! Every day here is a magical adventure filled with laughter, learning, and love.</p>
-                    <div class="hero-btns">
-                        <a href="#contact" class="btn-primary">Start the Adventure 🎈</a>
-                        <a href="#programs" class="btn-secondary">View Programs</a>
-                    </div>
-                </div>
+      <!-- ====== LANDING PAGE ====== -->
+      <header id="home" class="landing-page">
+
+        <!-- Animated particle canvas -->
+        <canvas id="lp-canvas" aria-hidden="true"></canvas>
+
+        <!-- Decorative floating shapes -->
+        <div class="lp-shape lp-shape-1"></div>
+        <div class="lp-shape lp-shape-2"></div>
+        <div class="lp-shape lp-shape-3"></div>
+        <div class="lp-shape lp-shape-4"></div>
+        <div class="lp-shape lp-shape-5"></div>
+
+        <!-- Background ambient blobs -->
+        <div class="lp-blob lp-blob-1"></div>
+        <div class="lp-blob lp-blob-2"></div>
+        <div class="lp-blob lp-blob-3"></div>
+
+        <div class="lp-inner">
+
+          <!-- TOP PILL BADGE -->
+          <div class="lp-badge" data-aos="fade-down" data-aos-duration="700">
+            <span class="lp-badge-dot"></span>
+            ✦ Admissions Open &middot; 2026&ndash;27 &middot; Chikmagalur&rsquo;s #1 Preschool
+          </div>
+
+          <!-- MAIN HEADLINE -->
+          <h1 class="lp-headline" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+            Where Little Minds<br>
+            <span class="lp-gradient-text">Blossom &amp; Shine</span>
+          </h1>
+
+          <!-- SUB HEADLINE -->
+          <p class="lp-sub" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+            A nurturing preschool where every child explores, creates, and grows &mdash; through play-based learning, expert teachers, and a warm family environment.
+          </p>
+
+          <!-- CTA BUTTONS -->
+          <div class="lp-btns" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+            <a href="#contact" class="lp-btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Enroll Your Child
+            </a>
+            <a href="#programs" class="lp-btn-ghost">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              Explore Programs
+            </a>
+          </div>
 
                 <div class="hero-visual" data-aos="zoom-out-left">
                     <div class="blob-border"></div>
                     <div class="slider-container">
-                        <button class="slider-btn prev" onclick="changeSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="slider-btn next" onclick="changeSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="slider-btn prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="slider-btn next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
                         
                         <div class="slider-image fade">
                             <img src="images/IMG-20250328-WA0008-1.jpg" alt="Kids playing">
@@ -130,323 +238,886 @@
             </div>
         </header>
 
-        <section id="programs" class="section-white">
-            <div class="container">
-                <div class="section-header text-center" data-aos="fade-up">
-                    <span class="sub-heading">Curriculum</span>
-                    <h2>Tiny Steps to <span class="highlight-blue">Big Leaps</span> 🏃‍♂️</h2>
-                </div>
-                
-                <div class="programs-grid">
-                    <div class="program-card p-nursery" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon-box">🧸</div>
-                        <h3>Pre-Nursery</h3>
-                        <div class="age-tag">2-3 Years</div>
-                        <p>Play & Discover through sensory activities and social interaction.</p>
-                    </div>
-                    
-                    <div class="program-card p-nursery-2" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon-box">🎨</div>
-                        <h3>Nursery</h3>
-                        <div class="age-tag">3-4 Years</div>
-                        <p>Create & Imagine with arts, music, and storytelling.</p>
-                    </div>
-                    
-                    <div class="program-card p-lkg" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon-box">📚</div>
-                        <h3>LKG</h3>
-                        <div class="age-tag">4-5 Years</div>
-                        <p>Learn & Grow with structured learning concepts and numbers.</p>
-                    </div>
-                    
-                    <div class="program-card p-ukg" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon-box">✏️</div>
-                        <h3>UKG</h3>
-                        <div class="age-tag">5-6 Years</div>
-                        <p>Ready for School! Advanced skills in reading and writing.</p>
-                    </div>
-                </div>
+
+      <!-- PROGRAMS -->
+      <section id="programs" class="section">
+        <div class="container">
+          <div class="section-tag" data-aos="fade-up">
+            <i class="fa-solid fa-book-open"></i> Our Curriculum
+          </div>
+          <h2 class="section-title" data-aos="fade-up">
+            Tiny Steps to <span class="gradient-text">Big Leaps</span>
+          </h2>
+          <p class="section-desc" data-aos="fade-up">
+            Age-appropriate programs designed to nurture curiosity and
+            confidence.
+          </p>
+
+          <div class="programs-grid">
+            <div
+              class="program-card"
+              data-aos="fade-up"
+              data-aos-delay="0"
+              style="--accent: var(--c-pink)"
+            >
+              <div class="pc-icon">🧸</div>
+              <div class="pc-age">2-3 Yrs</div>
+              <h3>Pre-Nursery</h3>
+              <p>
+                Play & Discover through sensory activities and social
+                interaction.
+              </p>
+              <div class="pc-footer">
+                <a href="#contact"
+                  >Learn More <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
-        </section>
-
-        <section id="features" class="section-colorful">
-            <div class="container">
-                <div class="section-header text-center" data-aos="fade-up">
-                    <h2 class="text-white">Why Kids <span class="highlight-yellow">Love Us</span> ❤️</h2>
-                </div>
-                
-                <div class="features-mosaic">
-                    <div class="feature-item" data-aos="zoom-in">
-                        <h3>🎨 Creative Chaos</h3>
-                        <p>We believe in getting messy! Painting and crafting helps little brains grow.</p>
-                    </div>
-                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="100">
-                        <h3>🏰 Safe Haven</h3>
-                        <p>CCTV monitored with childproof facilities. Safe and secure.</p>
-                    </div>
-                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="200">
-                        <h3>🤝 Best Friends</h3>
-                        <p>We teach kindness, sharing, and teamwork every single day.</p>
-                    </div>
-                    <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
-                        <h3>👩‍🏫 Caring Teachers</h3>
-                        <p>Trained educators who treat every child with love and patience.</p>
-                    </div>
-                </div>
+            <div
+              class="program-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+              style="--accent: var(--c-blue)"
+            >
+              <div class="pc-icon">🎨</div>
+              <div class="pc-age">3-4 Yrs</div>
+              <h3>Nursery</h3>
+              <p>Create & Imagine with arts, music, and storytelling.</p>
+              <div class="pc-footer">
+                <a href="#contact"
+                  >Learn More <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
-        </section>
-
-        <section id="daily-routine" class="section-pinkish">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2>A Day in the <span class="highlight-pink">Life</span> ☀️</h2>
-                </div>
-                
-                <div class="routine-path">
-                    <div class="routine-step" data-aos="fade-up">
-                        <div class="step-card">
-                            <div class="time-bubble">10:00</div>
-                            <div class="step-content">
-                                <h4>Prayer & Assembly</h4>
-                                <p>Starting the day with gratitude.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="routine-step" data-aos="fade-up" data-aos-delay="100">
-                        <div class="step-card">
-                            <div class="time-bubble">10:30</div>
-                            <div class="step-content">
-                                <h4>Learning Time 📝</h4>
-                                <p>Letters, numbers & concepts.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="routine-step" data-aos="fade-up" data-aos-delay="200">
-                        <div class="step-card">
-                            <div class="time-bubble">11:30</div>
-                            <div class="step-content">
-                                <h4>Rhymes & Music 🎶</h4>
-                                <p>Moving and grooving!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="routine-step" data-aos="fade-up" data-aos-delay="300">
-                        <div class="step-card">
-                            <div class="time-bubble">12:30</div>
-                            <div class="step-content">
-                                <h4>Creative Play 🎨</h4>
-                                <p>Art, craft and free play.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="routine-step" data-aos="fade-up" data-aos-delay="400">
-                        <div class="step-card">
-                            <div class="time-bubble">01:30</div>
-                            <div class="step-content">
-                                <h4>Home Time 🏠</h4>
-                                <p>Goodbye songs and pickup.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="program-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              style="--accent: var(--c-green)"
+            >
+              <div class="pc-icon">📚</div>
+              <div class="pc-age">4-5 Yrs</div>
+              <h3>LKG</h3>
+              <p>Learn & Grow with structured learning concepts and numbers.</p>
+              <div class="pc-footer">
+                <a href="#contact"
+                  >Learn More <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
-        </section>
-
-        <section id="admissions" class="section-paper">
-            <div class="container">
-                <div class="admissions-wrapper">
-                    <div class="admissions-info" data-aos="fade-right">
-                        <h2>Join Our Family! 🎓</h2>
-                        <p class="lead">We make enrollment easy and stress-free.</p>
-                        
-                        <div class="step-list">
-                            <div class="step-item">
-                                <span class="step-num">1</span>
-                                <p><strong>Visit Us:</strong> Come see our School in Pension Mohalla.</p>
-                            </div>
-                            <div class="step-item">
-                                <span class="step-num">2</span>
-                                <p><strong>Meet Teachers:</strong> Chat with our caring staff.</p>
-                            </div>
-                            <div class="step-item">
-                                <span class="step-num">3</span>
-                                <p><strong>Join In:</strong> Simple paperwork and you're set!</p>
-                            </div>
-                        </div>
-                        
-                        <div class="docs-box">
-                            <h4>📄 Checklist</h4>
-                            <ul>
-                                <li>˙Birth Certificate</li>
-                                <li>˙Photos (4)</li>
-                                <li>˙Parent's ID</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="admissions-cta" data-aos="zoom-in">
-                        <div class="cta-card">
-                            <h3>Fee Structure</h3>
-                            <p>We offer transparent, affordable pricing with sibling discounts.</p>
-                            <a href="#contact" class="btn-primary full-width">Get Fee Details</a>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="program-card"
+              data-aos="fade-up"
+              data-aos-delay="300"
+              style="--accent: var(--c-purple)"
+            >
+              <div class="pc-icon">✏️</div>
+              <div class="pc-age">5-6 Yrs</div>
+              <h3>UKG</h3>
+              <p>Ready for School! Advanced skills in reading and writing.</p>
+              <div class="pc-footer">
+                <a href="#contact"
+                  >Learn More <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="gallery" class="section-white">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2>Happy Moments 📸</h2>
-                </div>
-                <div class="polaroid-grid">
-                    <div class="polaroid" data-aos="rotate-in" style="transform: rotate(-2deg);">
-                        <div class="frame"><img src="images/IMG-20250328-WA0008-1.jpg" loading="lazy" alt="Kids building"></div>
-                        <div class="caption">Building Dreams</div>
-                    </div>
-                    <div class="polaroid" data-aos="rotate-in" data-aos-delay="100" style="transform: rotate(3deg);">
-                        <div class="frame"><img src="images/IMG-20250815-WA0028.jpg" loading="lazy" alt="Classroom fun"></div>
-                        <div class="caption">Classroom Fun</div>
-                    </div>
-                    <div class="polaroid" data-aos="rotate-in" data-aos-delay="200" style="transform: rotate(-1deg);">
-                        <div class="frame"><img src="images/IMG-20250815-WA0031.jpg" loading="lazy" alt="Arts and crafts"></div>
-                        <div class="caption">Little Artists</div>
-                    </div>
-                    <div class="polaroid" data-aos="rotate-in" data-aos-delay="300" style="transform: rotate(2deg);">
-                        <div class="frame"><img src="images/IMG-20250717-WA0007.jpg" loading="lazy" alt="Outdoor play"></div>
-                        <div class="caption">Outdoor Play</div>
-                    </div>
-                </div>
+      <!-- WAVE DIVIDER -->
+      <div class="wave-divider wave-dark">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path
+            d="M0,30 C480,100 960,0 1440,70 L1440,100 L0,100 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+
+      <!-- WHY US -->
+      <section id="features" class="section section-dark">
+        <div class="container">
+          <div class="section-tag light" data-aos="fade-up">
+            <i class="fa-solid fa-heart"></i> Why Choose Us
+          </div>
+          <h2 class="section-title light" data-aos="fade-up">
+            Why Kids <span class="text-yellow">Love Us</span>
+          </h2>
+
+          <div class="features-grid">
+            <div class="feature-card" data-aos="flip-left">
+              <div class="fc-icon"><i class="fa-solid fa-palette"></i></div>
+              <h3>Creative Chaos</h3>
+              <p>
+                We believe in getting messy! Painting and crafting helps little
+                brains grow.
+              </p>
             </div>
-        </section>
-
-        <section id="reviews" class="section-pinkish">
-            <div class="container">
-                <div class="section-header text-center" data-aos="fade-up">
-                    <span class="sub-heading">Testimonials</span>
-                    <h2>Happy Smiles & <span class="highlight-text">Stories</span> 😊</h2>
-                </div>
-
-                <div class="review-grid">
-                    <div class="review-card" data-aos="fade-right">
-                        <div class="video-frame">
-                             <video controls preload="metadata">
-                                <source src="images/VID-20250409-WA0035_1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="review-content">
-                            <div class="quote-icon">❝</div>
-                            <p>"I love my school. My teachers are very kind and caring. Thank you for the opportunity."</p>
-                            <h4>- Mohammed Insar</h4>
-                        </div>
-                    </div>
-
-                    <div class="review-card" data-aos="fade-left" data-aos-delay="100">
-                        <div class="video-frame">
-                            <video controls preload="metadata">
-                                <source src="images/VID-20250409-WA0034_1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="review-content">
-                            <div class="quote-icon">❝</div>
-                            <p>"Enjoy my school with good education and good activities."</p>
-                            <h4>- Vidmaye</h4>
-                        </div>
-                    </div>
-                </div>
+            <div class="feature-card" data-aos="flip-left" data-aos-delay="100">
+              <div class="fc-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h3>Safe Haven</h3>
+              <p>CCTV monitored with childproof facilities. Safe and secure.</p>
             </div>
-        </section>
-
-        <section id="contact" class="section-blue">
-            <div class="container">
-                <div class="contact-paper-container" data-aos="fade-up">
-                    <div class="contact-header">
-                        <h2>Say Hello! 👋</h2>
-                        <p>We can't wait to meet you and your little one.</p>
-                    </div>
-                    
-                    <div class="contact-grid">
-                        <div class="contact-info">
-                            <div class="info-bubble">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <div>
-                                    <h5>Visit Us</h5>
-                                    <p>Pension Mohalla, 3rd Cross<br>Chikmagalur, Karnataka 577101</p>
-                                </div>
-                            </div>
-                            
-                            <div class="info-bubble">
-                                <i class="fa-solid fa-phone"></i>
-                                <div>
-                                    <h5>Call Us</h5>
-                                    <p><a href="tel:+918277452777">+91 8277452777</a></p>
-                                    <p><a href="tel:+919902560625">+91 8660050952</a></p>
-                                </div>
-                            </div>
-
-                            <div class="map-frame">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15523.535284841968!2d75.7754!3d13.3153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDE4JzU1LjEiTiA3NcKwNDYnMzEuNCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
-                                width="100%" height="200" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
-                        </div>
-
-                        <form id="contactForm" class="bouncy-form">
-                            <input type="hidden" name="access_key" value="a4c270a9-62f6-4405-89cf-dc176bf6d3d9">
-                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                            
-                            <div class="form-group">
-                                <label for="name">Parent's Name</label>
-                                <input type="text" id="name" name="name" required placeholder="Mom or Dad's Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="Your Mobile Number">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email (Optional)</label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
-                            </div>
-                            <button type="submit" id="submitBtn">Send Message 🚀</button>
-                            <div id="statusMessage"></div>
-                        </form>
-                    </div>
-                </div>
+            <div class="feature-card" data-aos="flip-left" data-aos-delay="200">
+              <div class="fc-icon">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+              <h3>Best Friends</h3>
+              <p>We teach kindness, sharing, and teamwork every single day.</p>
             </div>
-        </section>
+            <div class="feature-card" data-aos="flip-left" data-aos-delay="300">
+              <div class="fc-icon">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </div>
+              <h3>Caring Teachers</h3>
+              <p>
+                Trained educators who treat every child with love and patience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DAILY ROUTINE -->
+      <section id="daily-routine" class="section">
+        <div class="container">
+          <div class="section-tag" data-aos="fade-up">
+            <i class="fa-solid fa-sun"></i> A Typical Day
+          </div>
+          <h2 class="section-title" data-aos="fade-up">
+            A Day in the <span class="gradient-text">Life</span>
+          </h2>
+
+          <div class="timeline">
+            <div class="tl-item" data-aos="fade-right">
+              <div class="tl-time" style="--dot-color: var(--c-pink)">
+                10:00 AM
+              </div>
+              <div class="tl-card">
+                <h4>
+                  <i class="fa-solid fa-hands-praying"></i> Prayer & Assembly
+                </h4>
+                <p>Starting the day with gratitude and positive energy.</p>
+              </div>
+            </div>
+            <div class="tl-item" data-aos="fade-left">
+              <div class="tl-time" style="--dot-color: var(--c-blue)">
+                10:30 AM
+              </div>
+              <div class="tl-card">
+                <h4><i class="fa-solid fa-pencil"></i> Learning Time</h4>
+                <p>Letters, numbers & fun concepts.</p>
+              </div>
+            </div>
+            <div class="tl-item" data-aos="fade-right">
+              <div class="tl-time" style="--dot-color: var(--c-green)">
+                11:30 AM
+              </div>
+              <div class="tl-card">
+                <h4><i class="fa-solid fa-music"></i> Rhymes & Music</h4>
+                <p>Moving and grooving to the beat!</p>
+              </div>
+            </div>
+            <div class="tl-item" data-aos="fade-left">
+              <div class="tl-time" style="--dot-color: var(--c-purple)">
+                12:30 PM
+              </div>
+              <div class="tl-card">
+                <h4><i class="fa-solid fa-paintbrush"></i> Creative Play</h4>
+                <p>Art, craft and free play time.</p>
+              </div>
+            </div>
+            <div class="tl-item" data-aos="fade-right">
+              <div class="tl-time" style="--dot-color: var(--c-yellow)">
+                01:30 PM
+              </div>
+              <div class="tl-card">
+                <h4><i class="fa-solid fa-house"></i> Home Time</h4>
+                <p>Goodbye songs and safe pickup.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADMISSIONS -->
+      <section id="admissions" class="section section-accent">
+        <div class="container">
+          <div class="admission-grid">
+            <div class="admission-info" data-aos="fade-right">
+              <div class="section-tag">
+                <i class="fa-solid fa-graduation-cap"></i> Enrollment
+              </div>
+              <h2 class="section-title">Join Our Family!</h2>
+              <p class="section-desc">
+                We make enrollment easy and stress-free.
+              </p>
+
+              <div class="steps-list">
+                <div class="sl-item">
+                  <div class="sl-num">1</div>
+                  <div>
+                    <strong>Visit Us</strong><br />Come see our School in
+                    Pension Mohalla.
+                  </div>
+                </div>
+                <div class="sl-item">
+                  <div class="sl-num">2</div>
+                  <div>
+                    <strong>Meet Teachers</strong><br />Chat with our caring
+                    staff.
+                  </div>
+                </div>
+                <div class="sl-item">
+                  <div class="sl-num">3</div>
+                  <div>
+                    <strong>Join In</strong><br />Simple paperwork and you're
+                    set!
+                  </div>
+                </div>
+              </div>
+
+              <div class="checklist-box">
+                <h4>
+                  <i class="fa-solid fa-clipboard-list"></i> Documents Needed
+                </h4>
+                <ul>
+                  <li><i class="fa-solid fa-check"></i> Birth Certificate</li>
+                  <li><i class="fa-solid fa-check"></i> 4 Passport Photos</li>
+                  <li><i class="fa-solid fa-check"></i> Parent's ID Proof</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="admission-cta" data-aos="zoom-in">
+              <div class="cta-card">
+                <div class="cta-icon">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+                <h3>Fee Structure</h3>
+                <p>
+                  Transparent, affordable pricing with sibling discounts
+                  available.
+                </p>
+                <div class="cta-price">₹20K - ₹40K <span>/year</span></div>
+                <a href="#contact" class="btn btn-white">Get Full Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WAVE DIVIDER -->
+      <div class="wave-divider wave-white flip">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path
+            d="M0,50 C360,0 1080,100 1440,40 L1440,100 L0,100 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="section">
+        <div class="container">
+          <div class="section-tag" data-aos="fade-up">
+            <i class="fa-solid fa-camera"></i> Gallery
+          </div>
+          <h2 class="section-title" data-aos="fade-up">
+            Happy <span class="gradient-text">Moments</span>
+          </h2>
+
+          <div class="gallery-grid">
+            <div class="gallery-item gi-large" data-aos="zoom-in">
+              <img
+                src="images/IMG-20250328-WA0008-1.jpg"
+                loading="lazy"
+                alt="Kids building"
+              />
+              <div class="gi-overlay"><span>Building Dreams</span></div>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+              <img
+                src="images/IMG-20250815-WA0028.jpg"
+                loading="lazy"
+                alt="Classroom fun"
+              />
+              <div class="gi-overlay"><span>Classroom Fun</span></div>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+              <img
+                src="images/IMG-20250815-WA0031.jpg"
+                loading="lazy"
+                alt="Arts and crafts"
+              />
+              <div class="gi-overlay"><span>Little Artists</span></div>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+              <img
+                src="images/IMG-20250717-WA0007.jpg"
+                loading="lazy"
+                alt="Outdoor play"
+              />
+              <div class="gi-overlay"><span>Outdoor Play</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== LEARNING MILESTONES ====== -->
+      <section id="milestones" class="section section-accent">
+        <div class="container">
+          <div class="section-tag" data-aos="fade-up">
+            <i class="fa-solid fa-seedling"></i> Growth Journey
+          </div>
+          <h2 class="section-title" data-aos="fade-up">
+            Your Child's <span class="gradient-text">Adventure Map</span>
+          </h2>
+          <p class="section-desc" data-aos="fade-up">
+            Watch your little one blossom through our carefully crafted learning
+            path.
+          </p>
+
+          <div class="milestones-path">
+            <div class="milestone-item" data-aos="zoom-in" data-aos-delay="0">
+              <div class="mi-icon" style="--mi-color: var(--c-pink)">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <div class="mi-line"></div>
+              <h4>First Hugs</h4>
+              <p>Building trust & comfort in a safe, loving space</p>
+            </div>
+            <div class="milestone-item" data-aos="zoom-in" data-aos-delay="100">
+              <div class="mi-icon" style="--mi-color: var(--c-blue)">
+                <i class="fa-solid fa-puzzle-piece"></i>
+              </div>
+              <div class="mi-line"></div>
+              <h4>Play & Discover</h4>
+              <p>Exploring shapes, colors, and the wonder of learning</p>
+            </div>
+            <div class="milestone-item" data-aos="zoom-in" data-aos-delay="200">
+              <div class="mi-icon" style="--mi-color: var(--c-green)">
+                <i class="fa-solid fa-book-open-reader"></i>
+              </div>
+              <div class="mi-line"></div>
+              <h4>ABCs & 123s</h4>
+              <p>Mastering letters, numbers, and early reading skills</p>
+            </div>
+            <div class="milestone-item" data-aos="zoom-in" data-aos-delay="300">
+              <div class="mi-icon" style="--mi-color: var(--c-purple)">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <div class="mi-line"></div>
+              <h4>Creative Spark</h4>
+              <p>Unleashing imagination through art, music & dance</p>
+            </div>
+            <div class="milestone-item" data-aos="zoom-in" data-aos-delay="400">
+              <div class="mi-icon" style="--mi-color: var(--c-yellow)">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+              <div class="mi-line"></div>
+              <h4>Ready to Fly!</h4>
+              <p>Confident, curious & school-ready for the big world</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== FUN FACTS TICKER ====== -->
+      <div class="fun-facts-ribbon">
+        <div class="fun-facts-track">
+          <div class="ff-item">
+            <i class="fa-solid fa-brain"></i> Kids learn 1,000+ new words per
+            year at ages 3-5
+          </div>
+          <div class="ff-item">
+            <i class="fa-solid fa-palette"></i> Art activities improve fine
+            motor skills by 68%
+          </div>
+          <div class="ff-item">
+            <i class="fa-solid fa-music"></i> Music boosts memory & cognitive
+            development
+          </div>
+          <div class="ff-item">
+            <i class="fa-solid fa-tree"></i> Outdoor play reduces stress &
+            increases creativity
+          </div>
+          <div class="ff-item">
+            <i class="fa-solid fa-heart"></i> Children who feel safe learn 3x
+            faster
+          </div>
+          <div class="ff-item">
+            <i class="fa-solid fa-brain"></i> Kids learn 1,000+ new words per
+            year at ages 3-5
+          </div>
+          <div class="ff-item">
+            <i class="fa-solid fa-palette"></i> Art activities improve fine
+            motor skills by 68%
+          </div>
+          <div class="ff-item">
+            <i class="fa-solid fa-music"></i> Music boosts memory & cognitive
+            development
+          </div>
+          <div class="ff-item">
+            <i class="fa-solid fa-tree"></i> Outdoor play reduces stress &
+            increases creativity
+          </div>
+          <div class="ff-item">
+            <i class="fa-solid fa-heart"></i> Children who feel safe learn 3x
+            faster
+          </div>
+        </div>
+      </div>
+
+      <!-- WAVE DIVIDER -->
+      <div class="wave-divider wave-soft">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path
+            d="M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+
+      <!-- REVIEWS -->
+      <section id="reviews" class="section section-soft">
+        <div class="container">
+          <div class="section-tag" data-aos="fade-up">
+            <i class="fa-solid fa-star"></i> Testimonials
+          </div>
+          <h2 class="section-title" data-aos="fade-up">
+            Happy Smiles & <span class="gradient-text">Stories</span>
+          </h2>
+
+          <div class="review-grid">
+            <div class="review-card" data-aos="fade-up" data-aos-duration="900">
+              <div class="review-card-inner">
+                <div class="rc-video">
+                  <div class="rc-badge">⭐ Verified Review</div>
+                  <video controls preload="metadata" poster="">
+                    <source
+                      src="images/VID-20250409-WA0035_1.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+                <div class="rc-body">
+                  <div class="rc-stars">★★★★★</div>
+                  <p>
+                    "I love my school. My teachers are very kind and caring. Thank
+                    you for the opportunity."
+                  </p>
+                  <div class="rc-author">
+                    <div class="rc-avatar">👦</div>
+                    <div>
+                      <strong>Mohammed Insar</strong>
+                      <span>Student · Blossom Kids 2025</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="review-card" data-aos="fade-up" data-aos-delay="150" data-aos-duration="900">
+              <div class="review-card-inner">
+                <div class="rc-video">
+                  <div class="rc-badge">⭐ Verified Review</div>
+                  <video controls preload="metadata" poster="">
+                    <source
+                      src="images/VID-20250409-WA0034_1.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+                <div class="rc-body">
+                  <div class="rc-stars">★★★★★</div>
+                  <p>
+                    "Enjoy my school with good education and good activities."
+                  </p>
+                  <div class="rc-author">
+                    <div class="rc-avatar">👧</div>
+                    <div>
+                      <strong>Vidmaye</strong>
+                      <span>Student · Blossom Kids 2025</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section section-soft">
+        <div class="container">
+          <div class="section-tag" data-aos="fade-up">
+            <i class="fa-solid fa-circle-question"></i> FAQ
+          </div>
+          <h2 class="section-title" data-aos="fade-up">
+            Common <span class="gradient-text">Questions</span>
+          </h2>
+          <p class="section-desc" data-aos="fade-up">
+            Everything parents ask before enrolling.
+          </p>
+
+          <div class="faq-list" data-aos="fade-up">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What is the age criteria for admission?</span
+                ><i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  We accept children from 1.5 years to 6 years of age.
+                  Pre-Nursery starts at 2 years, Nursery at 3, LKG at 4, and UKG
+                  at 5 years.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What are the school timings?</span
+                ><i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Our school operates from Monday to Saturday, 9:30 AM to 3:30
+                  PM. We follow a standard academic calendar with public
+                  holidays off.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Do you provide transport facilities?</span
+                ><i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Currently, we do not provide transport services. Parents are
+                  requested to arrange their own drop-off and pick-up.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What curriculum do you follow?</span
+                ><i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  We follow a play-based learning approach with a blend of
+                  Montessori and activity-based curriculum. Focus areas include
+                  literacy, numeracy, arts, music, and social skills.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Is there CCTV surveillance?</span
+                ><i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes! Our entire campus is under 24/7 CCTV monitoring. The
+                  safety and security of your children is our top priority.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What is the fee structure?</span
+                ><i class="fa-solid fa-plus"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Our fees range from ₹20,000 to ₹40,000 per year depending on
+                  the class. We offer sibling discounts. Contact us for the
+                  exact breakdown.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section-tag" data-aos="fade-up">
+            <i class="fa-solid fa-envelope"></i> Get in Touch
+          </div>
+          <h2 class="section-title" data-aos="fade-up">
+            Say <span class="gradient-text">Hello!</span>
+          </h2>
+          <p class="section-desc" data-aos="fade-up">
+            We can't wait to meet you and your little one.
+          </p>
+
+          <div class="contact-grid" data-aos="fade-up">
+            <div class="contact-info-panel">
+              <div class="cip-card">
+                <div class="cip-item">
+                  <div class="cip-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <h5>Visit Us</h5>
+                    <p>
+                      Pension Mohalla, 3rd Cross<br />Chikmagalur, Karnataka
+                      577101
+                    </p>
+                  </div>
+                </div>
+                <div class="cip-item">
+                  <div class="cip-icon"><i class="fa-solid fa-phone"></i></div>
+                  <div>
+                    <h5>Call Us</h5>
+                    <p>
+                      <a href="tel:+918277452777">+91 8277452777</a><br /><a
+                        href="tel:+918660050952"
+                        >+91 8660050952</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="cip-item">
+                  <div class="cip-icon"><i class="fa-solid fa-clock"></i></div>
+                  <div>
+                    <h5>School Hours</h5>
+                    <p>Mon - Sat: 9:30 AM - 3:30 PM</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="map-frame">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15523.535284841968!2d75.7754!3d13.3153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDE4JzU1LjEiTiA3NcKwNDYnMzEuNCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="180"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+              <input
+                type="hidden"
+                name="access_key"
+                value="a4c270a9-62f6-4405-89cf-dc176bf6d3d9"
+              />
+              <input type="checkbox" name="botcheck" style="display: none" />
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="name"
+                    ><i class="fa-solid fa-user"></i> Parent's Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Mom or Dad's Name"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="phone"
+                    ><i class="fa-solid fa-phone"></i> Phone</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    placeholder="10-digit number"
+                    pattern="[0-9]{10}"
+                    title="Please enter a 10-digit phone number"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="childName"
+                    ><i class="fa-solid fa-child"></i> Child's Name</label
+                  >
+                  <input
+                    type="text"
+                    id="childName"
+                    name="child_name"
+                    placeholder="Your Child's Name"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="childAge"
+                    ><i class="fa-solid fa-cake-candles"></i> Child's Age</label
+                  >
+                  <select id="childAge" name="child_age">
+                    <option value="" disabled selected>Select Age</option>
+                    <option value="1.5-2">1.5 - 2 Years</option>
+                    <option value="2-3">2 - 3 Years</option>
+                    <option value="3-4">3 - 4 Years</option>
+                    <option value="4-5">4 - 5 Years</option>
+                    <option value="5-6">5 - 6 Years</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="email"
+                  ><i class="fa-solid fa-envelope"></i> Email (Optional)</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="message"
+                  ><i class="fa-solid fa-message"></i> Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="How can we help you?"
+                  rows="4"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="submitBtn"
+                class="btn btn-pink btn-full"
+              >
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+              <div id="statusMessage"></div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3><span id="Blossom">Blossom</span><span id="Kids"> Kids</span></h3>
-                <img src="images/logo.png" alt="Blossom Kids Logo" style="width: 100px; height: auto;" class="circle-image" >
-                <p>Nurturing Young Minds with Joy in Chikmagalur.</p>
-                <div class="social-links">
-                    <a href="mailto:blossomkids.chikmagalur@gmail.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://www.instagram.com/_blossom_kids_" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@Blossom_Kids_Chikmangalur" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                </div>
+    <!-- GALLERY LIGHTBOX -->
+    <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+      <button class="lb-close" aria-label="Close lightbox">&times;</button>
+      <button class="lb-prev" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="lb-next" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <img id="lb-img" src="" alt="Gallery preview" />
+      <span id="lb-caption"></span>
+    </div>
+
+    <!-- CONFETTI CANVAS -->
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo-row">
+              <img src="images/logo.png" alt="Logo" class="footer-logo-img" />
+              <h3>
+                <span class="logo-blossom">Blossom</span>
+                <span class="logo-kids">Kids</span>
+              </h3>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 Blossom Kids. Made with 🍪 and ❤️.</p>
+            <p>Nurturing Young Minds with Joy in Chikmagalur since 2021.</p>
+            <div class="social-row">
+              <a
+                href="mailto:blossomkids.chikmagalur@gmail.com"
+                aria-label="Email"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/_blossom_kids_"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@Blossom_Kids_Chikmangalur"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
             </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#programs">Programs</a></li>
+              <li><a href="#daily-routine">Daily Life</a></li>
+              <li><a href="#admissions">Admissions</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fa-solid fa-clock"></i> Mon - Sat: 9:30 AM - 3:30 PM
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+918277452777">+91 8277452777</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:blossomkids.chikmagalur@gmail.com"
+                  >blossomkids.chikmagalur@gmail.com</a
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i> Pension Mohalla, 3rd
+                Cross, Chikmagalur
+              </li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Blossom Kids Preschool. Made with ❤️ in Chikmagalur.
+          </p>
+        </div>
+      </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <!-- WHATSAPP -->
+    <a
+      href="https://wa.me/918277452777?text=Hello%20Blossom%20Kids!%20I%20would%20like%20to%20enquire%20about%20admissions."
+      class="whatsapp-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
+    <!-- BACK TO TOP -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- CHATBOT -->
     <div id="sb-chatbot-widget">
         <button id="sb-toggle-btn">
             <span class="sb-icon">🦉</span>
@@ -460,7 +1131,7 @@
                     <h3>School Assistant</h3>
                     <span class="sb-status">● Online</span>
                 </div>
-                <button id="sb-close-btn" aria-label="Close chat">×</button>
+                <button id="sb-close-btn">×</button>
             </div>
 
             <div id="sb-messages">
@@ -478,9 +1149,24 @@
 
             <div class="sb-input-area">
                 <input type="text" id="sb-input" placeholder="Type a message..." autocomplete="off">
-                <button id="sb-send-btn" aria-label="Send message">➤</button>
+                <button id="sb-send-btn">➤</button>
             </div>
         </div>
+      </div>
     </div>
-</body>
+
+    <!-- STICKY MOBILE CTA BAR -->
+    <div class="mobile-cta-bar" id="mobileCta">
+      <a href="tel:+918277452777" class="mcta-btn mcta-call">
+        <i class="fa-solid fa-phone"></i> Call Us
+      </a>
+      <a href="#contact" class="mcta-btn mcta-enroll">
+        <i class="fa-solid fa-paper-plane"></i> Enroll Now
+      </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
