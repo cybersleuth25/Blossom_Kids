@@ -171,6 +171,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         showMessage("Something went wrong. Try again.", "error");
                     }
                 })
+                .catch(error => {
+                    console.error("Error:", error);
+                    showMessage("Network error. Please try again later.", "error");
+                })
                 .finally(() => {
                     submitBtn.disabled = false;
                     submitBtn.textContent = "Send Message 🚀";
