@@ -9,9 +9,21 @@ exports.handler = async (event, context) => {
 
   try {
     const formData = JSON.parse(event.body);
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+      console.error('Missing required environment variable: WEB3FORMS_ACCESS_KEY');
+      return {
+        statusCode: 503,
+        body: JSON.stringify({
+          success: false,
+          message: 'Service unavailable: WEB3FORMS_ACCESS_KEY is not configured',
+        }),
+      };
+    }
 
     // Append the access_key from environment variable
-    formData.access_key = process.env.WEB3FORMS_ACCESS_KEY;
+    formData.access_key = accessKey;
 
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
