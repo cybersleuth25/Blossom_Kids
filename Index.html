@@ -10,6 +10,21 @@
     />
     <meta name="theme-color" content="#FF6B95" />
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blossom Kids | Where Fun Meets Learning" />
+    <meta property="og:description" content="Blossom Kids Preschool in Chikmagalur — Best creative learning for kids aged 1.5 to 6. Admissions Open 2026-27." />
+    <meta property="og:image" content="https://blossomkids.netlify.app/images/logo.png" />
+    <meta property="og:url" content="https://blossomkids.netlify.app" />
+    <meta property="og:site_name" content="Blossom Kids" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blossom Kids | Where Fun Meets Learning" />
+    <meta name="twitter:description" content="Blossom Kids Preschool in Chikmagalur — Best creative learning for kids aged 1.5 to 6." />
+    <meta name="twitter:image" content="https://blossomkids.netlify.app/images/logo.png" />
+
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://api.web3forms.com; frame-src https://www.google.com https://maps.google.com;"
@@ -69,6 +84,9 @@
   </head>
 
   <body>
+    <!-- SKIP NAV -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
     <!-- THREE.JS 3D CANVAS -->
     <canvas id="three-canvas" aria-hidden="true"></canvas>
     <!-- SCROLL PROGRESS BAR -->
@@ -77,20 +95,52 @@
     <!-- CURSOR SPARKLE TRAIL -->
     <div id="cursor-trail" aria-hidden="true"></div>
 
-    <!-- PRELOADER v2 — PETAL BLOOM -->
-    <div id="preloader">
-      <div class="preloader-inner">
-        <div class="preloader-bloom">
-          <div class="petal p1"></div>
-          <div class="petal p2"></div>
-          <div class="petal p3"></div>
-          <div class="petal p4"></div>
-          <div class="petal p5"></div>
-          <div class="petal p6"></div>
-          <div class="petal-center"></div>
+    <!-- SKELETON LOADER -->
+    <div id="preloader" class="skeleton-loader">
+      <div class="sk-page">
+        <!-- Skeleton Navbar -->
+        <div class="sk-navbar">
+          <div class="sk-logo-group">
+            <div class="sk-circle sk-pulse"></div>
+            <div class="sk-lines">
+              <div class="sk-line sk-w60 sk-pulse"></div>
+              <div class="sk-line sk-w40 sk-pulse" style="height:8px;"></div>
+            </div>
+          </div>
+          <div class="sk-nav-links">
+            <div class="sk-pill sk-pulse"></div>
+            <div class="sk-pill sk-pulse"></div>
+            <div class="sk-pill sk-pulse"></div>
+            <div class="sk-pill sk-pulse"></div>
+          </div>
+          <div class="sk-nav-actions">
+            <div class="sk-icon-btn sk-pulse"></div>
+            <div class="sk-icon-btn sk-pulse"></div>
+            <div class="sk-cta-btn sk-pulse"></div>
+          </div>
         </div>
-        <p class="preloader-text">Blooming magic for your little ones...</p>
-        <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        <!-- Skeleton Hero -->
+        <div class="sk-hero">
+          <div class="sk-hero-content">
+            <div class="sk-badge sk-pulse"></div>
+            <div class="sk-heading sk-pulse"></div>
+            <div class="sk-heading sk-w80 sk-pulse"></div>
+            <div class="sk-paragraph sk-pulse"></div>
+            <div class="sk-paragraph sk-w60 sk-pulse"></div>
+            <div class="sk-btns">
+              <div class="sk-btn-lg sk-pulse"></div>
+              <div class="sk-btn-lg sk-ghost sk-pulse"></div>
+            </div>
+          </div>
+          <div class="sk-hero-image sk-pulse"></div>
+        </div>
+        <!-- Skeleton Cards -->
+        <div class="sk-cards">
+          <div class="sk-card sk-pulse"></div>
+          <div class="sk-card sk-pulse"></div>
+          <div class="sk-card sk-pulse"></div>
+          <div class="sk-card sk-pulse"></div>
+        </div>
       </div>
     </div>
 
@@ -108,26 +158,51 @@
         <a href="#home" class="logo" aria-label="Blossom Kids Home">
           <img src="images/logo.png" alt="Blossom Kids" class="nav-logo-img" />
           <div class="logo-text">
-            <span class="logo-blossom">Blossom</span>
-            <span class="logo-kids">Kids</span>
+            <span class="logo-blossom" data-i18n="logo_blossom">Blossom</span>
+            <span class="logo-kids" data-i18n="logo_kids">Kids</span>
           </div>
         </a>
 
         <!-- DESKTOP LINKS -->
         <ul class="nav-links" id="navLinks" role="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="#daily-routine">Daily Life</a></li>
-          <li><a href="#admissions">Admissions</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#home" data-i18n="nav_home">Home</a></li>
+          <li><a href="#programs" data-i18n="nav_programs">Programs</a></li>
+          <li><a href="#daily-routine" data-i18n="nav_daily">Daily Life</a></li>
+          <li><a href="#admissions" data-i18n="nav_admissions">Admissions</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
         </ul>
 
         <!-- RIGHT ACTIONS -->
         <div class="nav-actions">
-          <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">
-            <i class="fa-solid fa-moon" id="darkIcon"></i>
+          <button class="lang-toggle" id="langToggle" aria-label="Toggle Language" title="ಕನ್ನಡಕ್ಕೆ ಬದಲಾಯಿಸಿ">
+            <svg class="lang-globe" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span class="lang-label">KN</span>
           </button>
-          <a href="#contact" class="nav-cta">Enroll Now</a>
+          <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+            <div class="theme-icon-wrap" id="darkIcon">
+              <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+              <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" opacity="0.5"/>
+                <circle cx="19" cy="11" r="0.5" fill="currentColor" stroke="none" opacity="0.3"/>
+              </svg>
+            </div>
+          </button>
+          <a href="#contact" class="nav-cta" data-i18n="nav_cta">Enroll Now</a>
           <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -139,12 +214,12 @@
       <!-- MOBILE DRAWER -->
       <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
         <div class="mm-inner">
-          <a href="#home" class="mm-link">Home</a>
-          <a href="#programs" class="mm-link">Programs</a>
-          <a href="#daily-routine" class="mm-link">Daily Life</a>
-          <a href="#admissions" class="mm-link">Admissions</a>
-          <a href="#gallery" class="mm-link">Gallery</a>
-          <a href="#contact" class="mm-link mm-cta">Enroll Now →</a>
+          <a href="#home" class="mm-link" data-i18n="nav_home">Home</a>
+          <a href="#programs" class="mm-link" data-i18n="nav_programs">Programs</a>
+          <a href="#daily-routine" class="mm-link" data-i18n="nav_daily">Daily Life</a>
+          <a href="#admissions" class="mm-link" data-i18n="nav_admissions">Admissions</a>
+          <a href="#gallery" class="mm-link" data-i18n="nav_gallery">Gallery</a>
+          <a href="#contact" class="mm-link mm-cta" data-i18n="nav_cta">Enroll Now →</a>
           <div class="mm-footer">
             <a href="tel:+918277452777"><i class="fa-solid fa-phone"></i> +91 8277452777</a>
             <div class="mm-socials">
@@ -182,17 +257,17 @@
           <!-- TOP PILL BADGE -->
           <div class="lp-badge" data-aos="fade-down" data-aos-duration="700">
             <span class="lp-badge-dot"></span>
-            ✦ Admissions Open &middot; 2026&ndash;27 &middot; Chikmagalur&rsquo;s #1 Preschool
+            <span data-i18n="hero_badge">✦ Admissions Open &middot; 2026&ndash;27 &middot; Chikmagalur&rsquo;s #1 Preschool</span>
           </div>
 
           <!-- MAIN HEADLINE -->
-          <h1 class="lp-headline" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+          <h1 class="lp-headline" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100" data-i18n="hero_title">
             Where Little Minds<br>
             <span class="lp-gradient-text">Blossom &amp; Shine</span>
           </h1>
 
           <!-- SUB HEADLINE -->
-          <p class="lp-sub" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+          <p class="lp-sub" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-i18n="hero_desc">
             A nurturing preschool where every child explores, creates, and grows &mdash; through play-based learning, expert teachers, and a warm family environment.
           </p>
 
@@ -200,55 +275,86 @@
           <div class="lp-btns" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
             <a href="#contact" class="lp-btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              Enroll Your Child
+              <span data-i18n="btn_enroll">Enroll Your Child</span>
             </a>
             <a href="#programs" class="lp-btn-ghost">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-              Explore Programs
+              <span data-i18n="btn_explore">Explore Programs</span>
             </a>
           </div>
 
-                <div class="hero-visual" data-aos="zoom-out-left">
-                    <div class="blob-border"></div>
-                    <div class="slider-container">
-                        <button class="slider-btn prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="slider-btn next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
-                        
-                        <div class="slider-image fade">
-                            <img src="images/IMG-20250328-WA0008-1.jpg" alt="Kids playing">
-                        </div>
-                        <div class="slider-image fade">
-                            <img src="images/IMG-20250815-WA0028.jpg" alt="Learning activities">
-                        </div>
-                         <div class="slider-image fade">
-                            <img src="images/IMG-20250815-WA0031.jpg" alt="Creative arts">
-                        </div>
-                        <div class="slider-image fade">
-                            <img src="images/IMG-20250717-WA0007.jpg" alt="Outdoor play">
-                        </div>
-                        
-                        <div class="slider-dots">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                            <span class="dot" onclick="currentSlide(4)"></span>
-                        </div>
-                    </div>
-                </div>
+          <div class="hero-visual" data-aos="zoom-out-left">
+            <div class="blob-border"></div>
+            <div class="slider-container">
+              <button class="slider-btn prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="slider-btn next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+              
+              <div class="slider-image fade">
+                <img src="images/IMG-20250328-WA0008-1.webp" alt="Kids playing">
+              </div>
+              <div class="slider-image fade">
+                <img src="images/IMG-20250815-WA0028.webp" alt="Learning activities">
+              </div>
+               <div class="slider-image fade">
+                <img src="images/IMG-20250815-WA0031.webp" alt="Creative arts">
+              </div>
+              <div class="slider-image fade">
+                <img src="images/IMG-20250717-WA0007.webp" alt="Outdoor play">
+              </div>
+              
+              <div class="slider-dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+              </div>
             </div>
+          </div>
+        </div>
         </header>
 
+      <!-- STATS COUNTER RIBBON -->
+      <div class="stats-ribbon">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item" data-aos="zoom-in">
+              <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="stat-number" data-target="4">0</div>
+              <div class="stat-suffix">+</div>
+              <div class="stat-label" data-i18n="stat_years">Years of Trust</div>
+            </div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+              <div class="stat-icon"><i class="fa-solid fa-children"></i></div>
+              <div class="stat-number" data-target="200">0</div>
+              <div class="stat-suffix">+</div>
+              <div class="stat-label" data-i18n="stat_students">Happy Students</div>
+            </div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+              <div class="stat-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+              <div class="stat-number" data-target="15">0</div>
+              <div class="stat-suffix">+</div>
+              <div class="stat-label" data-i18n="stat_teachers">Expert Teachers</div>
+            </div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+              <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+              <div class="stat-number" data-target="30">0</div>
+              <div class="stat-suffix">+</div>
+              <div class="stat-label" data-i18n="stat_events">Events & Activities</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- PROGRAMS -->
       <section id="programs" class="section">
         <div class="container">
           <div class="section-tag" data-aos="fade-up">
-            <i class="fa-solid fa-book-open"></i> Our Curriculum
+            <i class="fa-solid fa-book-open"></i> <span data-i18n="curr_tag">Our Curriculum</span>
           </div>
-          <h2 class="section-title" data-aos="fade-up">
+          <h2 class="section-title" data-aos="fade-up" data-i18n="curr_title">
             Tiny Steps to <span class="gradient-text">Big Leaps</span>
           </h2>
-          <p class="section-desc" data-aos="fade-up">
+          <p class="section-desc" data-aos="fade-up" data-i18n="curr_desc">
             Age-appropriate programs designed to nurture curiosity and
             confidence.
           </p>
@@ -260,16 +366,16 @@
               data-aos-delay="0"
               style="--accent: var(--c-pink)"
             >
-              <div class="pc-icon">🧸</div>
+              <div class="pc-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
               <div class="pc-age">2-3 Yrs</div>
-              <h3>Pre-Nursery</h3>
-              <p>
+              <h3 data-i18n="pre_nursery">Pre-Nursery</h3>
+              <p data-i18n="pre_nursery_desc">
                 Play & Discover through sensory activities and social
                 interaction.
               </p>
               <div class="pc-footer">
                 <a href="#contact"
-                  >Learn More <i class="fa-solid fa-arrow-right"></i
+                  ><span data-i18n="learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -279,13 +385,13 @@
               data-aos-delay="100"
               style="--accent: var(--c-blue)"
             >
-              <div class="pc-icon">🎨</div>
+              <div class="pc-icon"><i class="fa-solid fa-palette"></i></div>
               <div class="pc-age">3-4 Yrs</div>
-              <h3>Nursery</h3>
-              <p>Create & Imagine with arts, music, and storytelling.</p>
+              <h3 data-i18n="nursery">Nursery</h3>
+              <p data-i18n="nursery_desc">Create & Imagine with arts, music, and storytelling.</p>
               <div class="pc-footer">
                 <a href="#contact"
-                  >Learn More <i class="fa-solid fa-arrow-right"></i
+                  ><span data-i18n="learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -295,13 +401,13 @@
               data-aos-delay="200"
               style="--accent: var(--c-green)"
             >
-              <div class="pc-icon">📚</div>
+              <div class="pc-icon"><i class="fa-solid fa-book-open"></i></div>
               <div class="pc-age">4-5 Yrs</div>
-              <h3>LKG</h3>
-              <p>Learn & Grow with structured learning concepts and numbers.</p>
+              <h3 data-i18n="lkg">LKG</h3>
+              <p data-i18n="lkg_desc">Learn & Grow with structured learning concepts and numbers.</p>
               <div class="pc-footer">
                 <a href="#contact"
-                  >Learn More <i class="fa-solid fa-arrow-right"></i
+                  ><span data-i18n="learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -311,13 +417,13 @@
               data-aos-delay="300"
               style="--accent: var(--c-purple)"
             >
-              <div class="pc-icon">✏️</div>
+              <div class="pc-icon"><i class="fa-solid fa-pencil"></i></div>
               <div class="pc-age">5-6 Yrs</div>
-              <h3>UKG</h3>
-              <p>Ready for School! Advanced skills in reading and writing.</p>
+              <h3 data-i18n="ukg">UKG</h3>
+              <p data-i18n="ukg_desc">Ready for School! Advanced skills in reading and writing.</p>
               <div class="pc-footer">
                 <a href="#contact"
-                  >Learn More <i class="fa-solid fa-arrow-right"></i
+                  ><span data-i18n="learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i
                 ></a>
               </div>
             </div>
@@ -339,17 +445,17 @@
       <section id="features" class="section section-dark">
         <div class="container">
           <div class="section-tag light" data-aos="fade-up">
-            <i class="fa-solid fa-heart"></i> Why Choose Us
+            <i class="fa-solid fa-heart"></i> <span data-i18n="why_tag">Why Choose Us</span>
           </div>
-          <h2 class="section-title light" data-aos="fade-up">
+          <h2 class="section-title light" data-aos="fade-up" data-i18n="why_title">
             Why Kids <span class="text-yellow">Love Us</span>
           </h2>
 
           <div class="features-grid">
             <div class="feature-card" data-aos="flip-left">
               <div class="fc-icon"><i class="fa-solid fa-palette"></i></div>
-              <h3>Creative Chaos</h3>
-              <p>
+              <h3 data-i18n="feature_creative">Creative Chaos</h3>
+              <p data-i18n="feature_creative_desc">
                 We believe in getting messy! Painting and crafting helps little
                 brains grow.
               </p>
@@ -358,22 +464,22 @@
               <div class="fc-icon">
                 <i class="fa-solid fa-shield-halved"></i>
               </div>
-              <h3>Safe Haven</h3>
-              <p>CCTV monitored with childproof facilities. Safe and secure.</p>
+              <h3 data-i18n="feature_safe">Safe Haven</h3>
+              <p data-i18n="feature_safe_desc">CCTV monitored with childproof facilities. Safe and secure.</p>
             </div>
             <div class="feature-card" data-aos="flip-left" data-aos-delay="200">
               <div class="fc-icon">
                 <i class="fa-solid fa-people-group"></i>
               </div>
-              <h3>Best Friends</h3>
-              <p>We teach kindness, sharing, and teamwork every single day.</p>
+              <h3 data-i18n="feature_friends">Best Friends</h3>
+              <p data-i18n="feature_friends_desc">We teach kindness, sharing, and teamwork every single day.</p>
             </div>
             <div class="feature-card" data-aos="flip-left" data-aos-delay="300">
               <div class="fc-icon">
                 <i class="fa-solid fa-chalkboard-user"></i>
               </div>
-              <h3>Caring Teachers</h3>
-              <p>
+              <h3 data-i18n="feature_teachers">Caring Teachers</h3>
+              <p data-i18n="feature_teachers_desc">
                 Trained educators who treat every child with love and patience.
               </p>
             </div>
@@ -385,9 +491,9 @@
       <section id="daily-routine" class="section">
         <div class="container">
           <div class="section-tag" data-aos="fade-up">
-            <i class="fa-solid fa-sun"></i> A Typical Day
+            <i class="fa-solid fa-sun"></i> <span data-i18n="timeline_tag">A Typical Day</span>
           </div>
-          <h2 class="section-title" data-aos="fade-up">
+          <h2 class="section-title" data-aos="fade-up" data-i18n="timeline_title">
             A Day in the <span class="gradient-text">Life</span>
           </h2>
 
@@ -398,9 +504,9 @@
               </div>
               <div class="tl-card">
                 <h4>
-                  <i class="fa-solid fa-hands-praying"></i> Prayer & Assembly
+                  <i class="fa-solid fa-hands-praying"></i> <span data-i18n="timeline_1">Prayer & Assembly</span>
                 </h4>
-                <p>Starting the day with gratitude and positive energy.</p>
+                <p data-i18n="timeline_1_desc">Starting the day with gratitude and positive energy.</p>
               </div>
             </div>
             <div class="tl-item" data-aos="fade-left">
@@ -408,8 +514,8 @@
                 10:30 AM
               </div>
               <div class="tl-card">
-                <h4><i class="fa-solid fa-pencil"></i> Learning Time</h4>
-                <p>Letters, numbers & fun concepts.</p>
+                <h4><i class="fa-solid fa-pencil"></i> <span data-i18n="timeline_2">Learning Time</span></h4>
+                <p data-i18n="timeline_2_desc">Letters, numbers & fun concepts.</p>
               </div>
             </div>
             <div class="tl-item" data-aos="fade-right">
@@ -417,8 +523,8 @@
                 11:30 AM
               </div>
               <div class="tl-card">
-                <h4><i class="fa-solid fa-music"></i> Rhymes & Music</h4>
-                <p>Moving and grooving to the beat!</p>
+                <h4><i class="fa-solid fa-music"></i> <span data-i18n="timeline_3">Rhymes & Music</span></h4>
+                <p data-i18n="timeline_3_desc">Moving and grooving to the beat!</p>
               </div>
             </div>
             <div class="tl-item" data-aos="fade-left">
@@ -426,8 +532,8 @@
                 12:30 PM
               </div>
               <div class="tl-card">
-                <h4><i class="fa-solid fa-paintbrush"></i> Creative Play</h4>
-                <p>Art, craft and free play time.</p>
+                <h4><i class="fa-solid fa-paintbrush"></i> <span data-i18n="timeline_4">Creative Play</span></h4>
+                <p data-i18n="timeline_4_desc">Art, craft and free play time.</p>
               </div>
             </div>
             <div class="tl-item" data-aos="fade-right">
@@ -435,8 +541,8 @@
                 01:30 PM
               </div>
               <div class="tl-card">
-                <h4><i class="fa-solid fa-house"></i> Home Time</h4>
-                <p>Goodbye songs and safe pickup.</p>
+                <h4><i class="fa-solid fa-house"></i> <span data-i18n="timeline_5">Home Time</span></h4>
+                <p data-i18n="timeline_5_desc">Goodbye songs and safe pickup.</p>
               </div>
             </div>
           </div>
@@ -449,10 +555,10 @@
           <div class="admission-grid">
             <div class="admission-info" data-aos="fade-right">
               <div class="section-tag">
-                <i class="fa-solid fa-graduation-cap"></i> Enrollment
+                <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="admissions_tag">Enrollment</span>
               </div>
-              <h2 class="section-title">Join Our Family!</h2>
-              <p class="section-desc">
+              <h2 class="section-title" data-i18n="admissions_title">Join Our Family!</h2>
+              <p class="section-desc" data-i18n="admissions_desc">
                 We make enrollment easy and stress-free.
               </p>
 
@@ -460,34 +566,34 @@
                 <div class="sl-item">
                   <div class="sl-num">1</div>
                   <div>
-                    <strong>Visit Us</strong><br />Come see our School in
-                    Pension Mohalla.
+                    <strong data-i18n="step_1">Visit Us</strong><br />
+                    <span data-i18n="step_1_desc">Come see our School in Pension Mohalla.</span>
                   </div>
                 </div>
                 <div class="sl-item">
                   <div class="sl-num">2</div>
                   <div>
-                    <strong>Meet Teachers</strong><br />Chat with our caring
-                    staff.
+                    <strong data-i18n="step_2">Meet Teachers</strong><br />
+                    <span data-i18n="step_2_desc">Chat with our caring staff.</span>
                   </div>
                 </div>
                 <div class="sl-item">
                   <div class="sl-num">3</div>
                   <div>
-                    <strong>Join In</strong><br />Simple paperwork and you're
-                    set!
+                    <strong data-i18n="step_3">Join In</strong><br />
+                    <span data-i18n="step_3_desc">Simple paperwork and you're set!</span>
                   </div>
                 </div>
               </div>
 
               <div class="checklist-box">
                 <h4>
-                  <i class="fa-solid fa-clipboard-list"></i> Documents Needed
+                  <i class="fa-solid fa-clipboard-list"></i> <span data-i18n="docs_title">Documents Needed</span>
                 </h4>
                 <ul>
-                  <li><i class="fa-solid fa-check"></i> Birth Certificate</li>
-                  <li><i class="fa-solid fa-check"></i> 4 Passport Photos</li>
-                  <li><i class="fa-solid fa-check"></i> Parent's ID Proof</li>
+                  <li><i class="fa-solid fa-check"></i> <span data-i18n="doc_1">Birth Certificate</span></li>
+                  <li><i class="fa-solid fa-check"></i> <span data-i18n="doc_2">4 Passport Photos</span></li>
+                  <li><i class="fa-solid fa-check"></i> <span data-i18n="doc_3">Parent's ID Proof</span></li>
                 </ul>
               </div>
             </div>
@@ -497,13 +603,13 @@
                 <div class="cta-icon">
                   <i class="fa-solid fa-indian-rupee-sign"></i>
                 </div>
-                <h3>Fee Structure</h3>
-                <p>
+                <h3 data-i18n="fee_title">Fee Structure</h3>
+                <p data-i18n="fee_desc">
                   Transparent, affordable pricing with sibling discounts
                   available.
                 </p>
-                <div class="cta-price">₹20K - ₹40K <span>/year</span></div>
-                <a href="#contact" class="btn btn-white">Get Full Details</a>
+                <div class="cta-price" data-i18n="fee_amount">₹20K - ₹40K <span>/year</span></div>
+                <a href="#contact" class="btn btn-white" data-i18n="btn_details">Get Full Details</a>
               </div>
             </div>
           </div>
@@ -524,44 +630,44 @@
       <section id="gallery" class="section">
         <div class="container">
           <div class="section-tag" data-aos="fade-up">
-            <i class="fa-solid fa-camera"></i> Gallery
+            <i class="fa-solid fa-camera"></i> <span data-i18n="gallery_tag">Gallery</span>
           </div>
-          <h2 class="section-title" data-aos="fade-up">
+          <h2 class="section-title" data-aos="fade-up" data-i18n="gallery_title">
             Happy <span class="gradient-text">Moments</span>
           </h2>
 
           <div class="gallery-grid">
             <div class="gallery-item gi-large" data-aos="zoom-in">
               <img
-                src="images/IMG-20250328-WA0008-1.jpg"
+                src="images/IMG-20250328-WA0008-1.webp"
                 loading="lazy"
                 alt="Kids building"
               />
-              <div class="gi-overlay"><span>Building Dreams</span></div>
+              <div class="gi-overlay"><span data-i18n="gallery_building">Building Dreams</span></div>
             </div>
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
               <img
-                src="images/IMG-20250815-WA0028.jpg"
+                src="images/IMG-20250815-WA0028.webp"
                 loading="lazy"
                 alt="Classroom fun"
               />
-              <div class="gi-overlay"><span>Classroom Fun</span></div>
+              <div class="gi-overlay"><span data-i18n="gallery_classroom">Classroom Fun</span></div>
             </div>
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
               <img
-                src="images/IMG-20250815-WA0031.jpg"
+                src="images/IMG-20250815-WA0031.webp"
                 loading="lazy"
                 alt="Arts and crafts"
               />
-              <div class="gi-overlay"><span>Little Artists</span></div>
+              <div class="gi-overlay"><span data-i18n="gallery_artists">Little Artists</span></div>
             </div>
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
               <img
-                src="images/IMG-20250717-WA0007.jpg"
+                src="images/IMG-20250717-WA0007.webp"
                 loading="lazy"
                 alt="Outdoor play"
               />
-              <div class="gi-overlay"><span>Outdoor Play</span></div>
+              <div class="gi-overlay"><span data-i18n="gallery_play">Outdoor Play</span></div>
             </div>
           </div>
         </div>
@@ -571,12 +677,12 @@
       <section id="milestones" class="section section-accent">
         <div class="container">
           <div class="section-tag" data-aos="fade-up">
-            <i class="fa-solid fa-seedling"></i> Growth Journey
+            <i class="fa-solid fa-seedling"></i> <span data-i18n="milestones_tag">Growth Journey</span>
           </div>
-          <h2 class="section-title" data-aos="fade-up">
+          <h2 class="section-title" data-aos="fade-up" data-i18n="milestones_title">
             Your Child's <span class="gradient-text">Adventure Map</span>
           </h2>
-          <p class="section-desc" data-aos="fade-up">
+          <p class="section-desc" data-aos="fade-up" data-i18n="milestones_desc">
             Watch your little one blossom through our carefully crafted learning
             path.
           </p>
@@ -587,40 +693,40 @@
                 <i class="fa-solid fa-hand-holding-heart"></i>
               </div>
               <div class="mi-line"></div>
-              <h4>First Hugs</h4>
-              <p>Building trust & comfort in a safe, loving space</p>
+              <h4 data-i18n="milestones_1">First Hugs</h4>
+              <p data-i18n="milestones_1_desc">Building trust & comfort in a safe, loving space</p>
             </div>
             <div class="milestone-item" data-aos="zoom-in" data-aos-delay="100">
               <div class="mi-icon" style="--mi-color: var(--c-blue)">
                 <i class="fa-solid fa-puzzle-piece"></i>
               </div>
               <div class="mi-line"></div>
-              <h4>Play & Discover</h4>
-              <p>Exploring shapes, colors, and the wonder of learning</p>
+              <h4 data-i18n="milestones_2">Play & Discover</h4>
+              <p data-i18n="milestones_2_desc">Exploring shapes, colors, and the wonder of learning</p>
             </div>
             <div class="milestone-item" data-aos="zoom-in" data-aos-delay="200">
               <div class="mi-icon" style="--mi-color: var(--c-green)">
                 <i class="fa-solid fa-book-open-reader"></i>
               </div>
               <div class="mi-line"></div>
-              <h4>ABCs & 123s</h4>
-              <p>Mastering letters, numbers, and early reading skills</p>
+              <h4 data-i18n="milestones_3">ABCs & 123s</h4>
+              <p data-i18n="milestones_3_desc">Mastering letters, numbers, and early reading skills</p>
             </div>
             <div class="milestone-item" data-aos="zoom-in" data-aos-delay="300">
               <div class="mi-icon" style="--mi-color: var(--c-purple)">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
               </div>
               <div class="mi-line"></div>
-              <h4>Creative Spark</h4>
-              <p>Unleashing imagination through art, music & dance</p>
+              <h4 data-i18n="milestones_4">Creative Spark</h4>
+              <p data-i18n="milestones_4_desc">Unleashing imagination through art, music & dance</p>
             </div>
             <div class="milestone-item" data-aos="zoom-in" data-aos-delay="400">
               <div class="mi-icon" style="--mi-color: var(--c-yellow)">
                 <i class="fa-solid fa-rocket"></i>
               </div>
               <div class="mi-line"></div>
-              <h4>Ready to Fly!</h4>
-              <p>Confident, curious & school-ready for the big world</p>
+              <h4 data-i18n="milestones_5">Ready to Fly!</h4>
+              <p data-i18n="milestones_5_desc">Confident, curious & school-ready for the big world</p>
             </div>
           </div>
         </div>
@@ -696,7 +802,7 @@
             <div class="review-card" data-aos="fade-up" data-aos-duration="900">
               <div class="review-card-inner">
                 <div class="rc-video">
-                  <div class="rc-badge">⭐ Verified Review</div>
+                  <div class="rc-badge"><svg class="rc-badge-star" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Verified Review</div>
                   <video controls preload="metadata" poster="">
                     <source
                       src="images/VID-20250409-WA0035_1.mp4"
@@ -711,7 +817,7 @@
                     you for the opportunity."
                   </p>
                   <div class="rc-author">
-                    <div class="rc-avatar">👦</div>
+                    <div class="rc-avatar boy"><i class="fa-solid fa-child-reaching"></i></div>
                     <div>
                       <strong>Mohammed Insar</strong>
                       <span>Student · Blossom Kids 2025</span>
@@ -723,7 +829,7 @@
             <div class="review-card" data-aos="fade-up" data-aos-delay="150" data-aos-duration="900">
               <div class="review-card-inner">
                 <div class="rc-video">
-                  <div class="rc-badge">⭐ Verified Review</div>
+                  <div class="rc-badge"><svg class="rc-badge-star" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Verified Review</div>
                   <video controls preload="metadata" poster="">
                     <source
                       src="images/VID-20250409-WA0034_1.mp4"
@@ -737,7 +843,7 @@
                     "Enjoy my school with good education and good activities."
                   </p>
                   <div class="rc-author">
-                    <div class="rc-avatar">👧</div>
+                    <div class="rc-avatar girl"><i class="fa-solid fa-child-dress"></i></div>
                     <div>
                       <strong>Vidmaye</strong>
                       <span>Student · Blossom Kids 2025</span>
@@ -747,6 +853,46 @@
               </div>
             </div>
           </div>
+
+          <!-- PARENT TEXT TESTIMONIALS -->
+          <div class="parent-reviews" data-aos="fade-up">
+            <div class="parent-review-card">
+              <div class="prc-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p data-i18n="review_parent_1">My daughter absolutely loves going to Blossom Kids every morning. The teachers are patient and caring. She has improved so much in her communication and confidence. Highly recommend!</p>
+              <div class="prc-author">
+                <div class="prc-avatar" style="--avatar-bg: var(--c-pink)"><i class="fa-solid fa-user"></i></div>
+                <div>
+                  <strong>Kavitha R.</strong>
+                  <span data-i18n="review_parent_label">Parent · LKG</span>
+                </div>
+              </div>
+              <div class="prc-stars">★★★★★</div>
+            </div>
+            <div class="parent-review-card">
+              <div class="prc-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p data-i18n="review_parent_2">Best preschool in Chikmagalur! Clean environment, CCTV security, and wonderful activities. My son learned to write his name within the first month. The annual day celebrations are amazing.</p>
+              <div class="prc-author">
+                <div class="prc-avatar" style="--avatar-bg: var(--c-blue)"><i class="fa-solid fa-user"></i></div>
+                <div>
+                  <strong>Ravi Kumar</strong>
+                  <span data-i18n="review_parent_label_2">Parent · Nursery</span>
+                </div>
+              </div>
+              <div class="prc-stars">★★★★★</div>
+            </div>
+            <div class="parent-review-card">
+              <div class="prc-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p data-i18n="review_parent_3">We moved to Chikmagalur and finding Blossom Kids was a blessing. The Montessori approach combined with play-based learning is perfect. The staff treats every child like their own.</p>
+              <div class="prc-author">
+                <div class="prc-avatar" style="--avatar-bg: var(--c-green)"><i class="fa-solid fa-user"></i></div>
+                <div>
+                  <strong>Priya S.</strong>
+                  <span data-i18n="review_parent_label_3">Parent · UKG</span>
+                </div>
+              </div>
+              <div class="prc-stars">★★★★★</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -754,23 +900,22 @@
       <section id="faq" class="section section-soft">
         <div class="container">
           <div class="section-tag" data-aos="fade-up">
-            <i class="fa-solid fa-circle-question"></i> FAQ
+            <i class="fa-solid fa-circle-question"></i> <span data-i18n="faq_tag">FAQ</span>
           </div>
           <h2 class="section-title" data-aos="fade-up">
-            Common <span class="gradient-text">Questions</span>
+            <span data-i18n="faq_title">Common Questions</span>
           </h2>
-          <p class="section-desc" data-aos="fade-up">
+          <p class="section-desc" data-aos="fade-up" data-i18n="faq_desc">
             Everything parents ask before enrolling.
           </p>
 
           <div class="faq-list" data-aos="fade-up">
             <div class="faq-item">
               <button class="faq-question">
-                <span>What is the age criteria for admission?</span
-                ><i class="fa-solid fa-plus"></i>
+                <span data-i18n="faq_q1">What is the age criteria for admission?</span><i class="fa-solid fa-plus"></i>
               </button>
               <div class="faq-answer">
-                <p>
+                <p data-i18n="faq_a1">
                   We accept children from 1.5 years to 6 years of age.
                   Pre-Nursery starts at 2 years, Nursery at 3, LKG at 4, and UKG
                   at 5 years.
@@ -779,11 +924,10 @@
             </div>
             <div class="faq-item">
               <button class="faq-question">
-                <span>What are the school timings?</span
-                ><i class="fa-solid fa-plus"></i>
+                <span data-i18n="faq_q2">What are the school timings?</span><i class="fa-solid fa-plus"></i>
               </button>
               <div class="faq-answer">
-                <p>
+                <p data-i18n="faq_a2">
                   Our school operates from Monday to Saturday, 9:30 AM to 3:30
                   PM. We follow a standard academic calendar with public
                   holidays off.
@@ -792,11 +936,10 @@
             </div>
             <div class="faq-item">
               <button class="faq-question">
-                <span>Do you provide transport facilities?</span
-                ><i class="fa-solid fa-plus"></i>
+                <span data-i18n="faq_q3">Do you provide transport facilities?</span><i class="fa-solid fa-plus"></i>
               </button>
               <div class="faq-answer">
-                <p>
+                <p data-i18n="faq_a3">
                   Currently, we do not provide transport services. Parents are
                   requested to arrange their own drop-off and pick-up.
                 </p>
@@ -804,11 +947,10 @@
             </div>
             <div class="faq-item">
               <button class="faq-question">
-                <span>What curriculum do you follow?</span
-                ><i class="fa-solid fa-plus"></i>
+                <span data-i18n="faq_q4">What curriculum do you follow?</span><i class="fa-solid fa-plus"></i>
               </button>
               <div class="faq-answer">
-                <p>
+                <p data-i18n="faq_a4">
                   We follow a play-based learning approach with a blend of
                   Montessori and activity-based curriculum. Focus areas include
                   literacy, numeracy, arts, music, and social skills.
@@ -817,11 +959,10 @@
             </div>
             <div class="faq-item">
               <button class="faq-question">
-                <span>Is there CCTV surveillance?</span
-                ><i class="fa-solid fa-plus"></i>
+                <span data-i18n="faq_q5">Is there CCTV surveillance?</span><i class="fa-solid fa-plus"></i>
               </button>
               <div class="faq-answer">
-                <p>
+                <p data-i18n="faq_a5">
                   Yes! Our entire campus is under 24/7 CCTV monitoring. The
                   safety and security of your children is our top priority.
                 </p>
@@ -829,11 +970,10 @@
             </div>
             <div class="faq-item">
               <button class="faq-question">
-                <span>What is the fee structure?</span
-                ><i class="fa-solid fa-plus"></i>
+                <span data-i18n="faq_q6">What is the fee structure?</span><i class="fa-solid fa-plus"></i>
               </button>
               <div class="faq-answer">
-                <p>
+                <p data-i18n="faq_a6">
                   Our fees range from ₹20,000 to ₹40,000 per year depending on
                   the class. We offer sibling discounts. Contact us for the
                   exact breakdown.
@@ -848,12 +988,12 @@
       <section id="contact" class="section">
         <div class="container">
           <div class="section-tag" data-aos="fade-up">
-            <i class="fa-solid fa-envelope"></i> Get in Touch
+            <i class="fa-solid fa-envelope"></i> <span data-i18n="contact_tag">Get in Touch</span>
           </div>
           <h2 class="section-title" data-aos="fade-up">
-            Say <span class="gradient-text">Hello!</span>
+            <span data-i18n="contact_title">Say Hello!</span>
           </h2>
-          <p class="section-desc" data-aos="fade-up">
+          <p class="section-desc" data-aos="fade-up" data-i18n="contact_desc">
             We can't wait to meet you and your little one.
           </p>
 
@@ -865,7 +1005,7 @@
                     <i class="fa-solid fa-location-dot"></i>
                   </div>
                   <div>
-                    <h5>Visit Us</h5>
+                    <h5 data-i18n="visit_title">Visit Us</h5>
                     <p>
                       Pension Mohalla, 3rd Cross<br />Chikmagalur, Karnataka
                       577101
@@ -875,7 +1015,7 @@
                 <div class="cip-item">
                   <div class="cip-icon"><i class="fa-solid fa-phone"></i></div>
                   <div>
-                    <h5>Call Us</h5>
+                    <h5 data-i18n="call_title">Call Us</h5>
                     <p>
                       <a href="tel:+918277452777">+91 8277452777</a><br /><a
                         href="tel:+918660050952"
@@ -887,8 +1027,8 @@
                 <div class="cip-item">
                   <div class="cip-icon"><i class="fa-solid fa-clock"></i></div>
                   <div>
-                    <h5>School Hours</h5>
-                    <p>Mon - Sat: 9:30 AM - 3:30 PM</p>
+                    <h5 data-i18n="hours_title">School Hours</h5>
+                    <p data-i18n="hours_value">Mon - Sat: 9:30 AM - 3:30 PM</p>
                   </div>
                 </div>
               </div>
@@ -916,7 +1056,7 @@
               <div class="form-row">
                 <div class="form-field">
                   <label for="name"
-                    ><i class="fa-solid fa-user"></i> Parent's Name</label
+                    ><i class="fa-solid fa-user"></i> <span data-i18n="form_parent_name">Parent's Name</span></label
                   >
                   <input
                     type="text"
@@ -924,11 +1064,13 @@
                     name="name"
                     required
                     placeholder="Mom or Dad's Name"
+                    data-i18n="parent_name_placeholder"
                   />
+                  <span id="nameError" class="validation-error" style="display:none;"></span>
                 </div>
                 <div class="form-field">
                   <label for="phone"
-                    ><i class="fa-solid fa-phone"></i> Phone</label
+                    ><i class="fa-solid fa-phone"></i> <span data-i18n="form_phone">Phone</span></label
                   >
                   <input
                     type="tel"
@@ -938,27 +1080,30 @@
                     placeholder="10-digit number"
                     pattern="[0-9]{10}"
                     title="Please enter a 10-digit phone number"
+                    data-i18n="phone_placeholder"
                   />
+                  <span id="phoneError" class="validation-error" style="display:none;"></span>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-field">
                   <label for="childName"
-                    ><i class="fa-solid fa-child"></i> Child's Name</label
+                    ><i class="fa-solid fa-child"></i> <span data-i18n="form_child_name">Child's Name</span></label
                   >
                   <input
                     type="text"
                     id="childName"
                     name="child_name"
                     placeholder="Your Child's Name"
+                    data-i18n="child_name_placeholder"
                   />
                 </div>
                 <div class="form-field">
                   <label for="childAge"
-                    ><i class="fa-solid fa-cake-candles"></i> Child's Age</label
+                    ><i class="fa-solid fa-cake-candles"></i> <span data-i18n="form_child_age">Child's Age</span></label
                   >
-                  <select id="childAge" name="child_age">
+                  <select id="childAge" name="child_age" data-i18n="child_age_select">
                     <option value="" disabled selected>Select Age</option>
                     <option value="1.5-2">1.5 - 2 Years</option>
                     <option value="2-3">2 - 3 Years</option>
@@ -969,21 +1114,51 @@
                 </div>
               </div>
 
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="visitDate"
+                    ><i class="fa-solid fa-calendar-days"></i> <span data-i18n="form_visit_date">Schedule a Visit</span></label
+                  >
+                  <input
+                    type="date"
+                    id="visitDate"
+                    name="visit_date"
+                  />
+                  <span id="dateError" class="validation-error" style="display:none;"></span>
+                </div>
+                <div class="form-field">
+                  <label for="visitTime"
+                    ><i class="fa-solid fa-clock"></i> <span data-i18n="form_visit_time">Preferred Time</span></label
+                  >
+                  <select id="visitTime" name="visit_time">
+                    <option value="" disabled selected data-i18n="time_select_placeholder">Select Time</option>
+                    <option value="09:30-10:30">09:30 AM - 10:30 AM</option>
+                    <option value="10:30-11:30">10:30 AM - 11:30 AM</option>
+                    <option value="11:30-12:30">11:30 AM - 12:30 PM</option>
+                    <option value="12:30-13:30">12:30 PM - 01:30 PM</option>
+                    <option value="13:30-14:30">01:30 PM - 02:30 PM</option>
+                    <option value="14:30-15:30">02:30 PM - 03:30 PM</option>
+                  </select>
+                  <span id="timeError" class="validation-error" style="display:none;"></span>
+                </div>
+              </div>
+
               <div class="form-field">
                 <label for="email"
-                  ><i class="fa-solid fa-envelope"></i> Email (Optional)</label
+                  ><i class="fa-solid fa-envelope"></i> <span data-i18n="form_email">Email (Optional)</span></label
                 >
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="your@email.com"
+                  data-i18n="email_placeholder"
                 />
               </div>
 
               <div class="form-field">
                 <label for="message"
-                  ><i class="fa-solid fa-message"></i> Message</label
+                  ><i class="fa-solid fa-message"></i> <span data-i18n="form_message">Message</span></label
                 >
                 <textarea
                   id="message"
@@ -991,7 +1166,9 @@
                   required
                   placeholder="How can we help you?"
                   rows="4"
+                  data-i18n="message_placeholder"
                 ></textarea>
+                <span id="messageError" class="validation-error" style="display:none;"></span>
               </div>
 
               <button
@@ -999,7 +1176,7 @@
                 id="submitBtn"
                 class="btn btn-pink btn-full"
               >
-                <i class="fa-solid fa-paper-plane"></i> Send Message
+                <i class="fa-solid fa-paper-plane"></i> <span data-i18n="btn_send">Send Message</span>
               </button>
               <div id="statusMessage"></div>
             </form>
@@ -1032,11 +1209,11 @@
             <div class="footer-logo-row">
               <img src="images/logo.png" alt="Logo" class="footer-logo-img" />
               <h3>
-                <span class="logo-blossom">Blossom</span>
-                <span class="logo-kids">Kids</span>
+                <span class="logo-blossom" data-i18n="logo_blossom">Blossom</span>
+                <span class="logo-kids" data-i18n="logo_kids">Kids</span>
               </h3>
             </div>
-            <p>Nurturing Young Minds with Joy in Chikmagalur since 2021.</p>
+            <p data-i18n="footer_tagline">Nurturing Young Minds with Joy in Chikmagalur since 2021.</p>
             <div class="social-row">
               <a
                 href="mailto:blossomkids.chikmagalur@gmail.com"
@@ -1060,21 +1237,21 @@
             </div>
           </div>
           <div class="footer-col">
-            <h4>Quick Links</h4>
+            <h4 data-i18n="footer_quick_links">Quick Links</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#programs">Programs</a></li>
-              <li><a href="#daily-routine">Daily Life</a></li>
-              <li><a href="#admissions">Admissions</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#home" data-i18n="nav_home">Home</a></li>
+              <li><a href="#programs" data-i18n="nav_programs">Programs</a></li>
+              <li><a href="#daily-routine" data-i18n="nav_daily">Daily Life</a></li>
+              <li><a href="#admissions" data-i18n="nav_admissions">Admissions</a></li>
+              <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+              <li><a href="#contact" data-i18n="contact_tag">Contact</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Contact Info</h4>
+            <h4 data-i18n="footer_contact_info">Contact Info</h4>
             <ul class="footer-contact">
               <li>
-                <i class="fa-solid fa-clock"></i> Mon - Sat: 9:30 AM - 3:30 PM
+                <i class="fa-solid fa-clock"></i> <span data-i18n="hours_value">Mon - Sat: 9:30 AM - 3:30 PM</span>
               </li>
               <li>
                 <i class="fa-solid fa-phone"></i>
@@ -1087,14 +1264,13 @@
                 >
               </li>
               <li>
-                <i class="fa-solid fa-location-dot"></i> Pension Mohalla, 3rd
-                Cross, Chikmagalur
+                <i class="fa-solid fa-location-dot"></i> <span data-i18n="hours_address">Pension Mohalla, 3rd Cross, Chikmagalur</span>
               </li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>
+          <p data-i18n="footer_copyright">
             &copy; 2026 Blossom Kids Preschool. Made with ❤️ in Chikmagalur.
           </p>
         </div>
@@ -1120,36 +1296,36 @@
     <!-- CHATBOT -->
     <div id="sb-chatbot-widget">
         <button id="sb-toggle-btn">
-            <span class="sb-icon">🦉</span>
-            <span class="sb-text">Need Help?</span>
+            <span class="sb-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+            <span class="sb-text" data-i18n="chatbot_need_help">Need Help?</span>
         </button>
 
         <div id="sb-chat-window" class="sb-hidden">
             <div class="sb-header">
-                <div class="sb-avatar">🦉</div>
+                <div class="sb-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
                 <div class="sb-info">
-                    <h3>School Assistant</h3>
-                    <span class="sb-status">● Online</span>
+                    <h3 data-i18n="chatbot_assistant">School Assistant</h3>
+                    <span class="sb-status">● <span data-i18n="chatbot_online">Online</span></span>
                 </div>
                 <button id="sb-close-btn">×</button>
             </div>
 
             <div id="sb-messages">
                 <div class="sb-msg sb-bot">
-                    <div class="sb-bubble">
+                    <div class="sb-bubble" data-i18n="chatbot_welcome">
                         Hello! Welcome to Blossom Kids. How can I help you?
                     </div>
                 </div>
                 <div class="sb-chips">
-                    <button class="sb-chip" data-ask="admissions">Admissions 📝</button>
-                    <button class="sb-chip" data-ask="transport">Transport 🚌</button>
-                    <button class="sb-chip" data-ask="fees">Fees 💰</button>
+                    <button class="sb-chip" data-ask="admissions" data-i18n="nav_admissions">Admissions</button>
+                    <button class="sb-chip" data-ask="transport" data-i18n="chatbot_chip_transport">Transport</button>
+                    <button class="sb-chip" data-ask="fees" data-i18n="fee_title">Fees</button>
                 </div>
             </div>
 
             <div class="sb-input-area">
-                <input type="text" id="sb-input" placeholder="Type a message..." autocomplete="off">
-                <button id="sb-send-btn">➤</button>
+                <input type="text" id="sb-input" placeholder="Type a message..." autocomplete="off" data-i18n="chatbot_placeholder">
+                <button id="sb-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
       </div>
@@ -1158,10 +1334,10 @@
     <!-- STICKY MOBILE CTA BAR -->
     <div class="mobile-cta-bar" id="mobileCta">
       <a href="tel:+918277452777" class="mcta-btn mcta-call">
-        <i class="fa-solid fa-phone"></i> Call Us
+        <i class="fa-solid fa-phone"></i> <span data-i18n="call_title">Call Us</span>
       </a>
       <a href="#contact" class="mcta-btn mcta-enroll">
-        <i class="fa-solid fa-paper-plane"></i> Enroll Now
+        <i class="fa-solid fa-paper-plane"></i> <span data-i18n="nav_cta">Enroll Now</span>
       </a>
     </div>
 
